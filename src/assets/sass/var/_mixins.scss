@@ -1,7 +1,3 @@
-@import './variables';
-
-$maxWidth: 1920;
-
 @mixin adaptiv-size($propName, $pcSize, $mobSize) {
     $addSize: $pcSize - $mobSize;
     #{$propName}: calc((#{$addSize} / (#{$maxWidth} - #{$minWidth}) * ((100vw - #{$minWidth + px})) + #{$mobSize + px}));

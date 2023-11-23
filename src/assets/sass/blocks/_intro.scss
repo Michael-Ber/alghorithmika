@@ -1,0 +1,168 @@
+.intro {
+    position: relative;
+    background: url('./assets/img/intro/intro-bg.jpg') 15% 0% no-repeat, $white-100;
+    min-height: 728px;
+
+
+
+    &__body {
+        position: relative;
+        padding-top: 37px;
+        z-index: 99;
+
+    }
+
+    &__wrapper {
+        @include adaptiv-size('max-width', 1080, 300); // max-width: 94%;
+
+        @media(max-width: $breakpoint-1199) {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        @include adaptiv-size('font-size', 74, 30);
+        font-weight: 600;
+    }
+
+    &__help {
+        @include adaptiv-size('font-size', 20, 14);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 75%;
+        gap: 30px;
+        margin-top: 60px;
+        font-weight: 500;
+
+        @media(max-width: $breakpoint-1599) {
+            max-width: 85%;
+        }
+
+        @media(max-width: $breakpoint-1399) {
+            max-width: 100%;
+        }
+
+        @media(max-width: $breakpoint-575) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__signup {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 50px;
+        max-width: 70%;
+        gap: 160px;
+
+        @media(max-width: $breakpoint-1599) {
+            max-width: 90%;
+        }
+
+        @media(max-width: $breakpoint-1399) {
+            max-width: 100%;
+        }
+
+        @media(max-width: $breakpoint-575) {
+            flex-direction: column;
+            gap: 55px;
+        }
+    }
+
+    &__btn-wrapper {
+        position: relative;
+        width: 250px;
+        height: 70px;
+        flex-shrink: 0;
+        order: 1;
+
+        @media(max-width: $breakpoint-575) {
+            width: 335px;
+            order: 2;
+        }
+
+        &:hover {
+            svg path {
+                transition: .3s all ease;
+
+                &:nth-child(n) {
+                    stroke: lighten($main-color, 10%)
+                }
+            }
+        }
+
+        svg {
+            position: absolute;
+            left: 85%;
+            top: -40px;
+
+            @media(max-width: $breakpoint-575) {
+                transform: rotate3d(2, -1, 0, 180deg);
+                left: -11%;
+                top: -95px;
+            }
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__consult {
+        font-size: 14px;
+        font-weight: 500;
+        order: 2;
+
+        @media(max-width: $breakpoint-575) {
+            @include adaptiv-size('max-width', 950, 250);
+            order: 1;
+            align-self: flex-end;
+            text-align: right;
+        }
+    }
+}
+
+
+.help-intro {
+
+    &__images {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__img {
+        position: relative;
+        width: 65px;
+        height: 65px;
+
+        &:nth-child(1) {
+            z-index: 10;
+        }
+
+        &:nth-child(2) {
+            z-index: 9;
+        }
+
+        &:nth-child(3) {
+            z-index: 8;
+        }
+
+        &:nth-child(4) {
+            z-index: 7;
+        }
+
+        &:nth-child(n):not(:first-child) {
+            margin-left: -10px;
+        }
+    }
+
+    &__text {}
+}
+
+.btn {}
+
+.btn-green {}

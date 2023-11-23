@@ -1,11 +1,14 @@
 @import './var/variables';
 @import './var/mixins';
 @import './blocks/header';
+@import './blocks/intro';
+@import './blocks/school';
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    // z-index: inherit;
 }
 
 body {
@@ -13,6 +16,12 @@ body {
     font-size: 16px;
     font-weight: 400;
     color: $text-color;
+}
+
+.container {
+    @include adaptiv-size('max-width', 1190, 675);
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 ul {
@@ -23,6 +32,19 @@ a {
     text-decoration: none;
     font-size: inherit;
     color: inherit;
+}
+
+div {
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.section-title {
+    @include adaptiv-size('font-size', 56, 36);
+    font-weight: 600;
 }
 
 .btn {
