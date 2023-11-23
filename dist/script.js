@@ -86,26 +86,48 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/assets/js/burger.js":
+/*!*********************************!*\
+  !*** ./src/assets/js/burger.js ***!
+  \*********************************/
+/*! exports provided: burgerInteraction */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "burgerInteraction", function() { return burgerInteraction; });
+const burgerInteraction = () => {
+  try {
+    const burgerBtn = document.querySelector('.header-burger__btn');
+    const menu = document.querySelector('.header-burger__menu');
+    burgerBtn.addEventListener('click', () => {
+      menu.classList.toggle('header-burger__menu_active');
+      burgerBtn.classList.toggle('header-burger__btn_active');
+    });
+    window.addEventListener('resize', () => {
+      menu.classList.remove('header-burger__menu_active');
+      burgerBtn.classList.remove('header-burger__btn_active');
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/***/ }),
+
 /***/ "./src/assets/js/main.js":
 /*!*******************************!*\
   !*** ./src/assets/js/main.js ***!
   \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-const a = document.querySelector('.wrapper');
-const body = document.querySelector('body');
-console.log(a);
-window.addEventListener('scroll', () => {
-  console.log(a.getBoundingClientRect().top);
-  if (a.getBoundingClientRect().top <= 0) {
-    body.style.overflow = 'hidden';
-    a.addEventListener('scroll', () => {
-      console.log('scroll');
-    });
-  } else {
-    body.style.overflow = 'auto';
-  }
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./burger */ "./src/assets/js/burger.js");
+
+window.addEventListener('DOMContentLoaded', () => {
+  Object(_burger__WEBPACK_IMPORTED_MODULE_0__["burgerInteraction"])();
 });
 
 /***/ })

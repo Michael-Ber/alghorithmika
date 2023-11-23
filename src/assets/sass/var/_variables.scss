@@ -1,10 +1,10 @@
-$main-color: #01abbb;
+$main-color: #8d30b9;
+$text-color: #1d1130;
+$green: #37d259;
 $white: #ffffff;
 $black: #000000;
-$black-light: #211721;
-$white-light: #F6EEE8;
-$bg-white: #f6f6f6;
-$gray: #404040;
+$white-100: #f5f5f5;
+
 
 $breakpoint-1399: 1399px;
 $breakpoint-1299: 1299px;
@@ -13,8 +13,6 @@ $breakpoint-991: 991px;
 $breakpoint-767: 767px;
 $breakpoint-575: 575px;
 
-$container: 1280px;
-$grid-container: 1280;
-$grid-column: 88;
-$grid-column-gap: 20;
-$grid-column-num: 12;
+$container: 1160px;
+$maxWidth: 1920;
+$minWidth: 375;
