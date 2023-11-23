@@ -3,6 +3,8 @@
 @import './blocks/header';
 @import './blocks/intro';
 @import './blocks/school';
+@import './blocks/course';
+@import './blocks/payment';
 
 * {
     margin: 0;
@@ -45,6 +47,7 @@ div {
 .section-title {
     @include adaptiv-size('font-size', 56, 36);
     font-weight: 600;
+    text-align: center;
 }
 
 .btn {
@@ -64,8 +67,9 @@ div {
     transition: .3s all ease;
 
     &:hover {
-        color: lighten($main-color, 10%);
-        border-color: lighten($main-color, 10%);
+        color: lighten($main-color, 20%);
+        border-color: lighten($main-color, 20%);
+        box-shadow: 0 0 10px 0 $main-color;
     }
 }
 

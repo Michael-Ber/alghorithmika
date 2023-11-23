@@ -9,6 +9,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./style.css">
     <title>Alghoritmika</title>
 </head>
@@ -17,10 +21,6 @@
 
     <main>
         <section class="intro">
-            <!-- <div class="intro__bg-float">
-                <div></div>
-            </div> -->
-
             <header class="header">
                 <div class="header__container">
                     <div class="header__wrapper">
@@ -342,8 +342,261 @@
                 </div>
             </div>
         </section>
-    </main>
 
+        <section class="course">
+            <div class="container">
+                <div class="course__wrapper">
+                    <h2 class="section-title course__title">
+                        Выбирайте подходящий курс
+                    </h2>
+                    <h3 class="course__subtitle">
+                        Ребенок может начать с любого возраста. А по окончании курса — перейти  на следующий, чтобы продолжить обучение и постепенно дорасти до уровня профессионального Python-разработчика.
+                    </h3>
+                    <div class="course__grid">
+                        <article class="course__card card-course">
+                            <div class="card-course__rectangle card-course__rectangle_yellow"></div>
+                            <div class="card-course__img card-course__img_1">
+                                <img src="./assets/img/course/01.png" alt="card-1">
+                            </div>
+                            <div class="course-card__content">
+                                <span class="card-course__age">6-7 лет</span>
+                                <h3 class="card-course__title">Основы логики
+                                    и программирования</h3>
+                                <p class="card-course__descr">Первое погружение в интересный мир алгоритмов и кода</p>
+                                <div class="card-course__links">
+                                    <a href="#" class="card-course__detail">Подробнее</a>
+                                    <a href="#" class="btn btn-main card-course__btn">Записаться</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="course__card card-course">
+                            <div class="card-course__rectangle card-course__rectangle_red"></div>
+                            <div class="card-course__img card-course__img_2">
+                                <img src="./assets/img/course/02.png" alt="card-2">
+                            </div>
+                            <div class="course-card__content">
+                                <span class="card-course__age">7-9 лет</span>
+                                <h3 class="card-course__title">Компьютерная грамотность</h3>
+                                <p class="card-course__descr">Учимся использовать современные программы с пользой для жизни</p>
+                                <div class="card-course__links">
+                                    <a href="#" class="card-course__detail">Подробнее</a>
+                                    <a href="#" class="btn btn-main card-course__btn">Записаться</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="course__card card-course">
+                            <div class="card-course__rectangle card-course__rectangle_red"></div>
+                            <div class="card-course__img card-course__img_3">
+                                <img src="./assets/img/course/03.png" alt="card-3">
+                            </div>
+                            <div class="course-card__content">
+                                <span class="card-course__age">9-10 лет</span>
+                                <h3 class="card-course__title">Визуальное программирование</h3>
+                                <p class="card-course__descr">От первой строчки кода до полноценных проектов</p>
+                                <div class="card-course__links">
+                                    <a href="#" class="card-course__detail">Подробнее</a>
+                                    <a href="#" class="btn btn-main card-course__btn">Записаться</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="course__card card-course">
+                            <div class="card-course__rectangle card-course__rectangle_blue"></div>
+                            <div class="card-course__img card-course__img_4">
+                                <img src="./assets/img/course/04.png" alt="card-4">
+                            </div>
+                            <div class="course-card__content">
+                                <span class="card-course__age">9-14 лет</span>
+                                <h3 class="card-course__title">Видеоблогинг</h3>
+                                <p class="card-course__descr">От создания видеоконтента до эффективного продвижения в соцсетях</p>
+                                <div class="card-course__links">
+                                    <a href="#" class="card-course__detail">Подробнее</a>
+                                    <a href="#" class="btn btn-main card-course__btn">Записаться</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="course__card card-course">
+                            <div class="card-course__rectangle card-course__rectangle_green"></div>
+                            <div class="card-course__img card-course__img_5">
+                                <img src="./assets/img/course/05.png" alt="card-5">
+                            </div>
+                            <div class="course-card__content">
+                                <span class="card-course__age">9-14 лет</span>
+                                <h3 class="card-course__title">Графический дизайн</h3>
+                                <p class="card-course__descr">Знакомство с миром визуальных коммуникаций</p>
+                                <div class="card-course__links">
+                                    <a href="#" class="card-course__detail">Подробнее</a>
+                                    <a href="#" class="btn btn-main card-course__btn">Записаться</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="course__card card-course">
+                            <div class="card-course__rectangle card-course__rectangle_lightyellow"></div>
+                            <div class="card-course__img card-course__img_6">
+                                <img src="./assets/img/course/06.png" alt="card-6">
+                            </div>
+                            <div class="course-card__content">
+                                <span class="card-course__age">10-11 лет</span>
+                                <h3 class="card-course__title">Геймдизайн</h3>
+                                <p class="card-course__descr">Знакомство с миром разработки игр и первый шаг к востребованной профессии</p>
+                                <div class="card-course__links">
+                                    <a href="#" class="card-course__detail">Подробнее</a>
+                                    <a href="#" class="btn btn-main card-course__btn">Записаться</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="course__card card-course">
+                            <div class="card-course__rectangle card-course__rectangle_lime"></div>
+                            <div class="card-course__img card-course__img_7">
+                                <img src="./assets/img/course/07.png" alt="card-7">
+                            </div>
+                            <div class="course-card__content">
+                                <span class="card-course__age">11-13 лет</span>
+                                <h3 class="card-course__title">Создание веб-сайтов</h3>
+                                <p class="card-course__descr">Навык создания сайтов как конкурентное преимущество</p>
+                                <div class="card-course__links">
+                                    <a href="#" class="card-course__detail">Подробнее</a>
+                                    <a href="#" class="btn btn-main card-course__btn">Записаться</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="course__card card-course">
+                            <div class="card-course__rectangle card-course__rectangle_purple"></div>
+                            <div class="card-course__img card-course__img_8">
+                                <img src="./assets/img/course/08.png" alt="card-8">
+                            </div>
+                            <div class="course-card__content">
+                                <span class="card-course__age">12-13 лет</span>
+                                <h3 class="card-course__title">Python Start</h3>
+                                <p class="card-course__descr">Увлекательное программирование на одном из самых популярных языков в мире</p>
+                                <div class="card-course__links">
+                                    <a href="#" class="card-course__detail">Подробнее</a>
+                                    <a href="#" class="btn btn-main card-course__btn">Записаться</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="course__card card-course">
+                            <div class="card-course__rectangle card-course__rectangle_purple"></div>
+                            <div class="card-course__img card-course__img_9">
+                                <img src="./assets/img/course/09.png" alt="card-9">
+                            </div>
+                            <div class="course-card__content">
+                                <span class="card-course__age">14-17 лет</span>
+                                <h3 class="card-course__title">Python Pro</h3>
+                                <p class="card-course__descr">Увлекательное программирование на одном из самых популярных языков в мире</p>
+                                <div class="card-course__links">
+                                    <a href="#" class="card-course__detail">Подробнее</a>
+                                    <a href="#" class="btn btn-main card-course__btn">Записаться</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="course__card card-course">
+                            <div class="card-course__rectangle card-course__rectangle_purplelight"></div>
+                            <div class="card-course__img card-course__img_10">
+                                <img src="./assets/img/course/10.png" alt="card-10">
+                            </div>
+                            <div class="course-card__content">
+                                <span class="card-course__age">12-14 лет</span>
+                                <h3 class="card-course__title">Разработка игр на Unity</h3>
+                                <p class="card-course__descr">Создаем собственные вселенные с помощью 3D моделирования и программирования</p>
+                                <div class="card-course__links">
+                                    <a href="#" class="card-course__detail">Подробнее</a>
+                                    <a href="#" class="btn btn-main card-course__btn">Записаться</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="course__card card-course">
+                            <div class="card-course__rectangle card-course__rectangle_pink"></div>
+                            <div class="card-course__img card-course__img_11">
+                                <img src="./assets/img/course/11.png" alt="card-11">
+                            </div>
+                            <div class="course-card__content">
+                                <span class="card-course__age">15-18 лет</span>
+                                <h3 class="card-course__title">Основы Frontend разработки</h3>
+                                <p class="card-course__descr">Создаем веб-приложение, используя все инструменты разработчика</p>
+                                <div class="card-course__links">
+                                    <a href="#" class="card-course__detail">Подробнее</a>
+                                    <a href="#" class="btn btn-main card-course__btn">Записаться</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="payment">
+            <div class="container">
+                <div class="payment__wrapper">
+                    <h2 class="section-title payment__title">Экономьте <span>до 30%</span> на уроках</h2>
+                    <h3 class="payment__subtitle">Чем больше пакет, тем дешевле уроки</h3>
+
+                    <div class="payment__cards">
+                        <article class="payment__card card-payment">
+                            <h4 class="card-payment__title">8 уроков</h4>
+                            <h5 class="card-payment__subtitle">На взлёт</h5>
+                            <div class="card-payment__discount"><span>скидка</span> 15%</div>
+                            <p class="card-payment__price">1225 ₽ <span>за урок</span></p>
+                            <a href="#" class="btn btn-main card-payment__btn">Оставить заявку</a>
+                        </article>
+                        <article class="payment__card card-payment">
+                            <h4 class="card-payment__title">16 уроков</h4>
+                            <h5 class="card-payment__subtitle">Полетели</h5>
+                            <div class="card-payment__discount"><span>скидка</span> 20%</div>
+                            <p class="card-payment__price">1153 ₽ <span>за урок</span></p>
+                            <a href="#" class="btn btn-main card-payment__btn">Оставить заявку</a>
+                        </article>
+                        <article class="payment__card payment__card_yellow card-payment">
+                            <h4 class="card-payment__title">32 урока</h4>
+                            <h5 class="card-payment__subtitle">Оптимус</h5>
+                            <div class="card-payment__discount"><span>скидка</span> 25%</div>
+                            <p class="card-payment__price">1081 ₽ <span>за урок</span></p>
+                            <a href="#" class="btn btn-sec card-payment__btn">Оставить заявку</a>
+                        </article>
+                        <article class="payment__card card-payment">
+                            <h4 class="card-payment__title">64 урока</h4>
+                            <h5 class="card-payment__subtitle">Максимус</h5>
+                            <div class="card-payment__discount"><span>скидка</span> 30%</div>
+                            <p class="card-payment__price">1009 ₽ <span>за урок</span></p>
+                            <a href="#" class="btn btn-main card-payment__btn">Оставить заявку</a>
+                        </article>
+                    </div>
+
+                    <div class="payment__carousel carousel-payment">
+                        <div class="carousel-payment__wrapper">
+                            <div class="carousel-payment__slide slide-carousel-payment">
+                                <div class="slide-carousel-payment__img">
+                                    <img src="./assets/icons/payment/01.svg" alt="slide-1">
+                                </div>
+                                <p class="slide-carousel-payment__descr">Вы можете оплатить тарифы «Оптимус», «Максимус» материнским капиталом</p>
+                            </div>
+                            <div class="carousel-payment__slide slide-carousel-payment">
+                                <div class="slide-carousel-payment__img">
+                                    <img src="./assets/icons/payment/02.svg" alt="slide-2">
+                                </div>
+                                <p class="slide-carousel-payment__descr">Вы можете оплатить тарифы «Оптимус», «Максимус»  сертификатом ПФДО</p>
+                            </div>
+                            <div class="carousel-payment__slide slide-carousel-payment">
+                                <div class="slide-carousel-payment__img">
+                                    <img src="./assets/icons/payment/01.svg" alt="slide-3">
+                                </div>
+                                <p class="slide-carousel-payment__descr">Вы можете оплатить вернуть 13% стоимости налоговым вычетом</p>
+                            </div>
+                            <div class="carousel-payment__slide slide-carousel-payment">
+                                <div class="slide-carousel-payment__img">
+                                    <img src="./assets/icons/payment/01.svg" alt="slide-4">
+                                </div>
+                                <p class="slide-carousel-payment__descr">Делите оплату на любой тариф на 4 части</p>
+                            </div>
+                        </div>
+                        <div class="carousel-payment__prev"></div>
+                        <div class="carousel-payment__next"></div>
+                        <div class="carousel-payment__pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./script.js"></script>
 </body>
 
