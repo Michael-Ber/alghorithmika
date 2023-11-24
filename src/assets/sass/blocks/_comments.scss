@@ -1,0 +1,363 @@
+.comments {
+    @include adaptiv-size('padding-top', 100, 56);
+    @include adaptiv-size('margin-top', 80, 42);
+    background-color: $white-200;
+    padding-bottom: 100px;
+
+    &__wrapper {}
+
+    &__carousel {}
+
+    &__title {
+        text-align: left !important;
+
+        @media(max-width: $breakpoint-575) {
+            text-align: center !important;
+        }
+    }
+
+    &__subtitle {
+        @include adaptiv-size('font-size', 46, 24);
+        margin-top: 60px;
+        text-align: center;
+
+        @media(max-width: $breakpoint-575) {
+            br {
+                display: none;
+            }
+        }
+    }
+
+    &__yandex-2gis {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 240px;
+        margin-top: 25px;
+
+        @media(max-width: $breakpoint-767) {
+            gap: 120px;
+        }
+
+        @media(max-width: $breakpoint-575) {
+            gap: 50px;
+        }
+    }
+
+    &__yandex {}
+
+    &__search-stars {}
+
+    &__2gis {}
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(300px, 560px));
+        justify-content: space-between;
+        margin-top: 35px;
+        row-gap: 30px;
+        column-gap: 40px;
+
+        @media(max-width: $breakpoint-767) {
+            grid-template-columns: 1fr;
+        }
+
+        @media(max-width: $breakpoint-575) {
+            margin-top: 41px;
+        }
+    }
+
+    &__item {
+        width: 100%;
+        background-color: $white;
+        padding: 50px 30px;
+        border-radius: 10px;
+
+        @media(max-width: $breakpoint-575) {
+            &:nth-child(n+3) {
+                display: none;
+            }
+        }
+    }
+
+    &__btn {
+        @include adaptiv-size('margin-top', 50, 40);
+        margin-left: auto;
+        margin-right: auto;
+        width: 160px;
+        height: 50px;
+    }
+}
+
+.carousel-comments {
+
+    &__wrapper {
+        margin-top: 50px;
+    }
+
+    &__slide-wrapper {
+        // width: 275px !important;
+    }
+
+    &__card {
+        position: relative;
+        min-height: 403px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        background-color: $main-color;
+        border-radius: 23px;
+        overflow: hidden;
+        padding: 30px 27px;
+        color: $white;
+
+        &_video {
+            background-color: $red-100;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 75px;
+                height: 75px;
+                border-radius: 100%;
+                background-color: $white;
+                cursor: pointer;
+            }
+
+            &::before {
+                content: url('./assets/icons/comments/play.svg');
+                position: absolute;
+                top: calc(50% + 10px);
+                left: calc(50% - 15px);
+                transform: translate(-50%, -50%);
+                z-index: 100;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__arrow-wrapper {
+        background-color: $white !important;
+        top: 0;
+
+        @media(max-width: $breakpoint-991) {
+            display: none !important;
+        }
+    }
+
+
+    &__next {
+        right: 0;
+
+    }
+
+    &__prev {
+        right: 110px;
+        transform: rotate(180deg);
+    }
+}
+
+.card-carousel-comments {
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 170px;
+
+        &_video {
+            bottom: 84px;
+        }
+    }
+
+    &__gradient {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        &_video {
+            width: 100%;
+            height: 65px;
+            background: linear-gradient(180deg, rgba(244, 76, 117, 0.00) 0%, $red-100 65%)
+        }
+
+        &_img {
+            width: 100%;
+            height: 65px;
+            background: linear-gradient(180deg, rgba(141, 48, 185, 0.00) 0%, $main-color 85%)
+        }
+    }
+
+    &__content {}
+
+    &__stars {
+        position: relative;
+        display: flex;
+        gap: 5px;
+        z-index: 100;
+    }
+
+    &__star {
+        width: 18px;
+        height: 18px;
+
+        &_yellow {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+    &__name {
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+
+    &__comment {
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 5px;
+    }
+
+    &__link {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 10px;
+        text-decoration-style: wavy;
+        text-decoration-line: underline;
+        text-decoration-color: $white;
+        text-underline-offset: 5px;
+    }
+}
+
+.comments-search-stars {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__stars {
+        display: flex;
+        gap: 5px;
+        margin-top: 15px;
+    }
+
+    &__logo {
+        margin-top: 15px;
+
+        &_yandex {
+            @include adaptiv-size('width', 160, 120);
+            @include adaptiv-size('height', 62, 46);
+
+        }
+
+        &_2gis {
+            @include adaptiv-size('width', 160, 120);
+            @include adaptiv-size('height', 52, 40);
+
+        }
+    }
+
+    &__num {
+        @include adaptiv-size('font-size', 30, 24);
+        font-weight: 600;
+    }
+}
+
+.subtitle-comments {
+
+    &__good {
+        color: $green;
+    }
+
+    &__bad {
+        color: $red-100;
+    }
+}
+
+.item-comments {
+
+    &__name-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center
+    }
+
+    &__name {
+        @include adaptiv-size('font-size', 16, 14);
+        font-weight: 600;
+    }
+
+    &__value {
+        display: flex;
+        margin-top: 10px;
+        gap: 20px;
+
+        @media(max-width: $breakpoint-575) {
+            margin-top: 13px;
+        }
+    }
+
+    &__stars {
+        display: flex;
+        gap: 5px;
+
+    }
+
+    &__yandex {
+        @include adaptiv-size('font-size', 16, 14);
+        text-decoration: underline;
+        font-weight: 500;
+    }
+
+    &__date-common {
+        @include adaptiv-size('font-size', 16, 14);
+        color: $date-color;
+        font-weight: 500;
+        margin: 0 0 0 auto;
+
+        &_top {
+            display: none;
+
+            @media(max-width: $breakpoint-991) {
+                display: block;
+            }
+        }
+
+        &_bottom {
+            display: block;
+
+            @media(max-width: $breakpoint-991) {
+                display: none;
+            }
+        }
+
+
+
+    }
+
+
+    &__date-top {
+        @extend .item-comments__date-top;
+
+        @media(max-width: $breakpoint-991) {}
+    }
+
+    &__text {
+        @include adaptiv-size('font-size', 16, 14);
+        font-weight: 500;
+        margin-top: 10px;
+    }
+
+    &__read {
+        @include adaptiv-size('font-size', 16, 14);
+        color: $main-color;
+    }
+}

@@ -10400,6 +10400,60 @@ const burgerInteraction = () => {
 
 /***/ }),
 
+/***/ "./src/assets/js/commentsSlider.js":
+/*!*****************************************!*\
+  !*** ./src/assets/js/commentsSlider.js ***!
+  \*****************************************/
+/*! exports provided: commentsSlider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "commentsSlider", function() { return commentsSlider; });
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
+/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
+
+
+const commentsSlider = () => {
+  try {
+    const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.comments__carousel', {
+      loop: false,
+      grabCursor: true,
+      spaceBetween: 20,
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__["Navigation"]],
+      breakpoints: {
+        1400: {
+          slidesPerView: 4
+        },
+        992: {
+          slidesPerView: 3.5
+        },
+        660: {
+          slidesPerView: 2.5
+        },
+        576: {
+          slidesPerView: 2
+        },
+        420: {
+          slidesPerView: 1.6
+        },
+        375: {
+          slidesPerView: 1.2
+        }
+      },
+      // Navigation arrows
+      navigation: {
+        nextEl: '.carousel-comments__next',
+        prevEl: '.carousel-comments__prev'
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/***/ }),
+
 /***/ "./src/assets/js/main.js":
 /*!*******************************!*\
   !*** ./src/assets/js/main.js ***!
@@ -10412,6 +10466,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./burger */ "./src/assets/js/burger.js");
 /* harmony import */ var _paymentSlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./paymentSlider */ "./src/assets/js/paymentSlider.js");
 /* harmony import */ var _teachersSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./teachersSlider */ "./src/assets/js/teachersSlider.js");
+/* harmony import */ var _commentsSlider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./commentsSlider */ "./src/assets/js/commentsSlider.js");
+
 
 
 
@@ -10419,6 +10475,7 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_burger__WEBPACK_IMPORTED_MODULE_0__["burgerInteraction"])();
   Object(_paymentSlider__WEBPACK_IMPORTED_MODULE_1__["paymentSlider"])();
   Object(_teachersSlider__WEBPACK_IMPORTED_MODULE_2__["teachersSlider"])();
+  Object(_commentsSlider__WEBPACK_IMPORTED_MODULE_3__["commentsSlider"])();
 });
 
 /***/ }),
