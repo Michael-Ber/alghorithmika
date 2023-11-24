@@ -10411,11 +10411,14 @@ const burgerInteraction = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./burger */ "./src/assets/js/burger.js");
 /* harmony import */ var _paymentSlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./paymentSlider */ "./src/assets/js/paymentSlider.js");
+/* harmony import */ var _teachersSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./teachersSlider */ "./src/assets/js/teachersSlider.js");
+
 
 
 window.addEventListener('DOMContentLoaded', () => {
   Object(_burger__WEBPACK_IMPORTED_MODULE_0__["burgerInteraction"])();
   Object(_paymentSlider__WEBPACK_IMPORTED_MODULE_1__["paymentSlider"])();
+  Object(_teachersSlider__WEBPACK_IMPORTED_MODULE_2__["teachersSlider"])();
 });
 
 /***/ }),
@@ -10451,6 +10454,52 @@ const paymentSlider = () => {
       navigation: {
         nextEl: '.carousel-payment__next',
         prevEl: '.carousel-payment__prev'
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/***/ }),
+
+/***/ "./src/assets/js/teachersSlider.js":
+/*!*****************************************!*\
+  !*** ./src/assets/js/teachersSlider.js ***!
+  \*****************************************/
+/*! exports provided: teachersSlider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "teachersSlider", function() { return teachersSlider; });
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
+/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
+
+
+const teachersSlider = () => {
+  try {
+    const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.teachers__carousel', {
+      loop: true,
+      grabCursor: true,
+      spaceBetween: 30,
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__["Navigation"], swiper_modules__WEBPACK_IMPORTED_MODULE_1__["Pagination"]],
+      pagination: {
+        el: '.carousel-teachers__pagination',
+        type: 'bullets'
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2
+        },
+        375: {
+          slidesPerView: 1
+        }
+      },
+      // Navigation arrows
+      navigation: {
+        nextEl: '.carousel-teachers__next',
+        prevEl: '.carousel-teachers__prev'
       }
     });
   } catch (error) {

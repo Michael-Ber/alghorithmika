@@ -1,11 +1,13 @@
 .payment {
-    @include adaptiv-size('padding-top', 80, 40);
-
-    &__wrapper {
-    }
+    padding-top: 80px;
 
     &__title {
-        text-align-last: left;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // flex-wrap: wrap;
+        text-align: left !important;
+
         span {
             color: $red-100
         }
@@ -16,37 +18,78 @@
     }
 
     &__cards {
+        @include adaptiv-size('gap', 40, 10);
         display: grid;
-        grid-template-columns: repeat(auto-fill, 260px);
+        grid-template-columns: repeat(4, minmax(200px, 260px));
         justify-content: center;
-        gap: 40px;
         margin-top: 30px;
+
+
+        @media(max-width: $breakpoint-1399) {
+            grid-template-columns: repeat(2, 260px);
+        }
+
+        @media(max-width: $breakpoint-767) {
+            grid-template-columns: repeat(2, 46%);
+            justify-content: space-between;
+        }
+
+        @media(max-width: $breakpoint-767) {
+            gap: 20px;
+        }
     }
 
     &__card {
+        @include adaptiv-size('min-height', 290, 175);
         text-align: center;
         padding: 30px;
         background-color: $white-200;
         border-radius: 15px;
-        min-height: 290px;
+        justify-self: center;
+
         &_yellow {
             background-color: $yellow-300;
+
+            @media(max-width: $breakpoint-767) {
+                color: $main-color;
+            }
+        }
+
+        @media(max-width: $breakpoint-1399) {
+            width: 100%;
+        }
+
+        @media(max-width: $breakpoint-767) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            width: 100%;
         }
     }
 
     &__carousel {
+        position: relative;
         overflow: hidden;
         margin-top: 26px;
     }
 }
+
 .card-payment {
 
     &__title {
         @include adaptiv-size('font-size', 30, 20);
+
     }
+
     &__subtitle {
         @include adaptiv-size('font-size', 20, 14);
         margin-top: 10px;
+
+        @media(max-width: $breakpoint-767) {
+            margin-top: 7px;
+        }
     }
 
     &__discount {
@@ -57,16 +100,64 @@
         padding: 5px 11px;
         background-color: $red-100;
         border-radius: 7px;
-        transform: rotate(-10deg)
+        transform: rotate(-10deg);
+
+        span {
+            display: inline;
+
+            @media(max-width: $breakpoint-767) {
+                display: none;
+            }
+        }
+
+        i {
+            display: none;
+
+            @media(max-width: $breakpoint-767) {
+                display: inline-block;
+            }
+        }
+
+        @media(max-width: $breakpoint-767) {
+            margin-top: 7px;
+        }
     }
 
     &__price {
         @include adaptiv-size('font-size', 30, 20);
         margin-top: 10px;
         font-weight: 600;
+
         span {
             @include adaptiv-size('font-size', 20, 12);
             font-weight: 400;
+
+            span {
+                @media(max-width: $breakpoint-767) {
+                    display: none;
+                }
+            }
+        }
+
+        @media(max-width: $breakpoint-767) {
+            margin-top: 7px;
+        }
+    }
+
+    &__btn-text-lg {
+        display: inline;
+
+        @media(max-width: $breakpoint-767) {
+            display: none;
+        }
+    }
+
+    &__btn-text-sm {
+        display: none;
+        text-transform: capitalize;
+
+        @media(max-width: $breakpoint-767) {
+            display: inline;
         }
     }
 
@@ -74,8 +165,13 @@
         @include adaptiv-size('width', 200, 117);
         @include adaptiv-size('height', 50, 35);
         margin-top: 15px;
+
+        @media(max-width: $breakpoint-767) {
+            margin-top: 8px;
+        }
     }
 }
+
 .carousel-payment {
 
     &__wrapper {
@@ -88,29 +184,51 @@
         align-items: center;
         flex-direction: column;
         padding: 33px 20px 20px 20px;
-        min-height: 340px;;
+        min-height: 340px;
         background-color: $white-200;
         border-radius: 15px;
         gap: 26px;
         width: 100%;
         flex-shrink: 0;
+        border: 1px solid $white-300;
 
+    }
+
+    &__arrow-wrapper {
+        top: 50%;
+
+        @media(max-width: $breakpoint-767) {
+            display: none !important;
+        }
     }
 
     &__prev {
+        transform: rotate(180deg) translate(0, 50%);
+        left: 20px;
     }
 
     &__next {
+        right: 20px;
+        transform: translate(0, -50%);
     }
 
     &__pagination {
+        position: absolute;
+        bottom: 20px !important;
+        text-align: center;
+
+
     }
+
+
 }
+
 .slide-carousel-payment {
 
     &__img {
         width: 110px;
         height: 110px;
+
         img {
             object-fit: contain;
         }
@@ -122,4 +240,5 @@
         max-width: 70%;
         text-align: center;
     }
+
 }
