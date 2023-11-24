@@ -2,11 +2,13 @@ import { burgerInteraction } from "./burger";
 import { paymentSlider } from "./paymentSlider";
 import { teachersSlider } from "./teachersSlider";
 import { commentsSlider } from "./commentsSlider";
+import { accordion } from "./accordion";
 
 
 window.addEventListener('DOMContentLoaded', () => {
     burgerInteraction();
     paymentSlider();
     teachersSlider();
-    commentsSlider()
+    commentsSlider();
+    accordion();
 })

@@ -1,0 +1,177 @@
+.footer {
+
+    &__wrapper {
+    }
+
+    &__top {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+
+    &__middle {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 30px;
+        padding-bottom: 34px;
+        border-bottom: 1px solid $white-300;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 35px 0 44px 0;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    &__logo {
+        cursor: pointer;
+        &:hover {
+            svg {
+                &:nth-child(1) {
+                    path {
+                        transition: .3s ease fill;
+
+                        &:nth-child(1) {
+                            fill: lighten($main-color, 10%)
+                        }
+                    }
+                }
+
+                &:nth-child(2) {
+                    path {
+                        transition: .3s ease fill;
+
+                        &:nth-child(1),
+                        &:nth-child(2) {
+                            fill: lighten($main-color, 10%)
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    &__contacts {
+        margin-left: 115px;
+    }
+
+    &__socials {
+        display: inline-flex;
+        align-items: center;
+        gap: 18px;
+        
+    }
+
+    &__telegram {
+        &:hover {
+            svg path {
+                transition: .3s all ease;
+                
+                &:nth-child(1),
+                &:nth-child(2) {
+                    fill: darken($main-color, 10%)
+                }
+
+                &:nth-child(2) {
+                    stroke-width: 0.1;
+                }
+            }
+        }
+    }
+
+    &__whatsapp {
+        &:hover {
+            svg path {
+                transition: .3s all ease;
+
+                &:nth-child(1) {
+                    fill: darken($main-color, 10%)
+                }
+            }
+        }
+    }
+
+    &__tel {
+        @include adaptiv-size('font-size', 30, 24);
+        font-weight: 600;
+    }
+
+    &__address {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-style: normal;
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+
+    &__skolkovo {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin: 0 0 0 auto;
+        max-width: 180px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    &__skolkovo-icon {
+        width: 76px;
+        height: 55px;
+        flex-shrink: 0;
+    }
+
+    
+
+    &__license {
+        flex: 0 0 calc(100%/3)
+    }
+    &__license-title {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 150%;
+    }
+
+    &__license-text {
+        @include adaptiv-size('font-size', 14, 12);
+        font-weight: 400;
+        padding-right: 30px;
+        line-height: 150%;
+    }
+
+    &__nav {
+        flex: 0 0 50%;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 20px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    &__item {
+    }
+
+    &__link {
+    }
+
+    
+
+    &__copyright {
+    }
+
+    &__offer {
+    }
+
+    &__politic {
+    }
+}

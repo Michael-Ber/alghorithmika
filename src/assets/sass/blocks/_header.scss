@@ -1,6 +1,5 @@
 .header {
     position: relative;
-    // background-color: $white-100;
     z-index: 100;
 
     &__container {
@@ -136,7 +135,6 @@
         }
     }
 
-    &__navlink {}
 
     &__cabinet {
         @include adaptiv-size('font-size', 16, 14);

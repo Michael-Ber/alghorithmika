@@ -1,0 +1,75 @@
+.choice {
+    background-image: url('./assets/img/choice/choice-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: 65% 0%;
+    color: $white;
+    min-height: 725px;
+    padding: 103px 0 96px 0;
+
+    @media(max-width: $breakpoint-767) {
+        min-height: 1164px;
+        background-image: url('./assets/img/choice/choice-bg-mini.jpg');
+        background-repeat: no-repeat;
+        background-position: 0% 80%;
+        background-size: cover;
+    }
+
+    &__wrapper {
+        padding: 0 10px;
+    }
+
+    &__title {
+        text-align: left !important;
+        max-width: 65%;
+        @media(max-width: $breakpoint-767) {
+            max-width: 100%;
+        }
+    }
+
+    &__form {
+        @include adaptiv-size('margin-top', 60, 50);
+        display: flex;
+        flex-direction: column;
+        max-width: 460px;
+        gap: 20px;
+    }
+
+    &__input {
+        font-size: 18px;
+        width: 100%;
+        height: 60px;
+        font-weight: 500;
+        color: $text-color;
+        padding: 0 0 0 30px;
+        border: none;
+        border-radius: 50px;
+        outline: none;
+        &::placeholder {
+            color: $date-color;
+        }
+        &:nth-child(2) {
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+    }
+
+    &__btn {
+        @include adaptiv-size('margin-top', 20, 10);
+        width: 100%;
+        height: 60px;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__privacy {
+        @include adaptiv-size('font-size', 14, 12);
+        margin-top: 13px;
+    }
+
+    &__link {
+        text-decoration: underline;
+    }
+}

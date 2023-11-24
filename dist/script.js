@@ -10371,6 +10371,37 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/assets/js/accordion.js":
+/*!************************************!*\
+  !*** ./src/assets/js/accordion.js ***!
+  \************************************/
+/*! exports provided: accordion */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "accordion", function() { return accordion; });
+const accordion = () => {
+  try {
+    const items = document.querySelectorAll('.accordion-questions__item');
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        const content = item.querySelector('.accordion-questions__answer');
+        item.classList.toggle('accordion-questions__item_active');
+        if (item.classList.contains('accordion-questions__item_active')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          content.style.maxHeight = 0 + 'px';
+        }
+      });
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/***/ }),
+
 /***/ "./src/assets/js/burger.js":
 /*!*********************************!*\
   !*** ./src/assets/js/burger.js ***!
@@ -10467,6 +10498,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _paymentSlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./paymentSlider */ "./src/assets/js/paymentSlider.js");
 /* harmony import */ var _teachersSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./teachersSlider */ "./src/assets/js/teachersSlider.js");
 /* harmony import */ var _commentsSlider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./commentsSlider */ "./src/assets/js/commentsSlider.js");
+/* harmony import */ var _accordion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./accordion */ "./src/assets/js/accordion.js");
+
 
 
 
@@ -10476,6 +10509,7 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_paymentSlider__WEBPACK_IMPORTED_MODULE_1__["paymentSlider"])();
   Object(_teachersSlider__WEBPACK_IMPORTED_MODULE_2__["teachersSlider"])();
   Object(_commentsSlider__WEBPACK_IMPORTED_MODULE_3__["commentsSlider"])();
+  Object(_accordion__WEBPACK_IMPORTED_MODULE_4__["accordion"])();
 });
 
 /***/ }),
