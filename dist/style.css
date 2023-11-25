@@ -280,6 +280,11 @@
   background: url("./assets/img/intro/intro-bg.jpg") 15% 0% no-repeat, #f5f5f5;
   min-height: 728px;
 }
+@media (max-width: 991px) {
+  .intro {
+    background: #f5f5f5;
+  }
+}
 .intro__body {
   position: relative;
   padding-top: 37px;

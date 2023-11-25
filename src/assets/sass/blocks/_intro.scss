@@ -3,6 +3,10 @@
     background: url('./assets/img/intro/intro-bg.jpg') 15% 0% no-repeat, $white-100;
     min-height: 728px;
 
+    @media(max-width: $breakpoint-991) {
+        background: $white-100;
+    }
+
     &__body {
         position: relative;
         padding-top: 37px;
