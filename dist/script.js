@@ -10585,9 +10585,12 @@ const popup = () => {
     close.addEventListener('click', () => {
       closePopup();
     });
-    window.addEventListener('resize', () => {
-      closePopup();
-    });
+
+    //not working properly on mobiles when focusing on input
+    // window.addEventListener('resize', () => {
+    //     closePopup()
+    // })
+
     window.addEventListener('click', e => {
       if (e.target.classList.contains('popup_active')) {
         closePopup();
