@@ -132,10 +132,11 @@
         @include adaptiv-size('font-size', 24, 18);
         @include adaptiv-size('margin-top', 30, 26);
         font-weight: 600;
-        span {
-            @include adaptiv-size('margin-bottom', 28, 20);
-            display: block;
-        }
+    }
+
+    &__list-title {
+        @include adaptiv-size('margin-bottom', 28, 20);
+        display: block;
     }
 
     &__item {

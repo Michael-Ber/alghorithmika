@@ -2443,7 +2443,7 @@
   margin-top: calc(4 / (1920 - 375) * (100vw - 375px) + 26px);
   font-weight: 600;
 }
-.popup__list span {
+.popup__list-title {
   margin-bottom: calc(8 / (1920 - 375) * (100vw - 375px) + 20px);
   display: block;
 }
