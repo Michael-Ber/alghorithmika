@@ -10,7 +10,8 @@ export const teachersSlider = () => {
             modules: [Navigation, Pagination],
             pagination: {
                 el: '.carousel-teachers__pagination',
-                type: 'bullets'
+                type: 'bullets',
+                clickable: true
             },
             breakpoints: {
                 768: {

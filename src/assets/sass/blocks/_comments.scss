@@ -4,10 +4,6 @@
     background-color: $white-200;
     padding-bottom: 100px;
 
-    &__wrapper {}
-
-    &__carousel {}
-
     &__title {
         text-align: left !important;
 
@@ -43,12 +39,6 @@
             gap: 50px;
         }
     }
-
-    &__yandex {}
-
-    &__search-stars {}
-
-    &__2gis {}
 
     &__grid {
         display: grid;
@@ -93,10 +83,6 @@
 
     &__wrapper {
         margin-top: 50px;
-    }
-
-    &__slide-wrapper {
-        // width: 275px !important;
     }
 
     &__card {
@@ -193,8 +179,6 @@
             background: linear-gradient(180deg, rgba(141, 48, 185, 0.00) 0%, $main-color 85%)
         }
     }
-
-    &__content {}
 
     &__stars {
         position: relative;
@@ -338,8 +322,6 @@
                 display: none;
             }
         }
-
-
 
     }
 

@@ -4,9 +4,6 @@
 
     background-color: $white;
 
-    &__wrapper {
-    }
-
     &__title {
         text-align: left !important;
     }
@@ -95,8 +92,6 @@
     &__answer {
         @include adaptiv-size('font-size', 18, 14);
         font-weight: 700;
-        // display: none;
-        
         visibility: hidden;
         max-height: 0;
         transition: .3s max-height ease;

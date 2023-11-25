@@ -12,7 +12,8 @@ export const paymentSlider = () => {
             modules: [Navigation, Pagination],
             pagination: {
                 el: '.carousel-payment__pagination',
-                type: 'bullets'
+                type: 'bullets',
+                clickable: true
               },
             
               // Navigation arrows

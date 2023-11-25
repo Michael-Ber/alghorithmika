@@ -1,0 +1,200 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(#000000, .8);
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s opacity ease;
+    &_active {
+        z-index: 1000;
+        opacity: 1;
+        visibility: visible
+    }
+    &__body {
+        @include adaptiv-size('width', 760, 375);
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $white;
+        border-radius: 40px;
+        margin: 0 auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 95%;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
+    }
+    
+    &__wrapper {
+        @include adaptiv-size('width', 600, 395);
+        @include adaptiv-size('padding-top', 160, 105);
+        @include adaptiv-size('padding-bottom', 63, 73);
+        position: relative;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        
+    }
+
+    &__img {
+        @include adaptiv-size('width', 230, 160);
+        @include adaptiv-size('height', 150, 105);
+        @include adaptiv-size('right', -10, 90);
+        position: absolute;
+        top: 20px;
+    }
+
+    &__rectangle {
+        @include adaptiv-size('width', 220, 154);
+        @include adaptiv-size('height', 177, 124);
+        @include adaptiv-size('top', -30, 0);
+        @include adaptiv-size('right', -80, 0);
+        position: absolute;
+        transform: rotate(-65deg);
+        background-color: $yellow-200;
+    }
+
+    &__close {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: block;
+        flex-shrink: 0;
+        border-radius: 100%;
+        background-color: $white-250;
+        transition: .3s transform ease;
+        transform: rotate(45deg);
+        z-index: 100;
+        cursor: pointer;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 3px;
+            height: 21px;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            background-color: $close-popup;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 3px;
+            width: 21px;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            background-color: $close-popup;
+        }
+            &:hover {
+            background-color: darken($white-250, 10%);
+            transform: rotate(135deg) 
+        }
+
+    }
+
+    &__title {
+        @include adaptiv-size('font-size', 56, 44);
+        font-weight: 600;
+    }
+
+    &__subtitle {
+        @include adaptiv-size('font-size', 24, 18);
+        @include adaptiv-size('margin-top', 20, 14);
+        font-weight: 600;
+    }
+
+    &__descr {
+        @include adaptiv-size('font-size', 18, 16);
+        @include adaptiv-size('margin-top', 46, 27);
+        font-weight: 500;
+    }
+
+    &__list {
+        @include adaptiv-size('font-size', 24, 18);
+        @include adaptiv-size('margin-top', 30, 26);
+        font-weight: 600;
+        span {
+            @include adaptiv-size('margin-bottom', 28, 20);
+            display: block;
+        }
+    }
+
+    &__item {
+        @include adaptiv-size('font-size', 18, 16);
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        font-weight: 500;
+        margin-left: 20px;
+        &:nth-child(n):not(:first-child) {
+            margin-top: 30px;
+        }
+        &::before {
+            content: '';
+            display: block;
+            width: 14px;
+            height: 27px;
+            background-color: $red-200;
+            transform: rotate(30deg);
+            flex-shrink: 0;
+        }
+    }
+
+    &__form {
+        @include adaptiv-size('margin-top', 59, 43);
+    }
+
+    &__inputs {
+        display: flex;
+        justify-content: space-between;
+        @media(max-width: $breakpoint-991) {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    &__input {
+        @include adaptiv-size('width', 270, 170);
+        display: block;
+        height: 70px;
+        font-size: 18px;
+        font-weight: 500;
+        padding-left: 32px;
+        border-radius: 50px;
+        border: 1px solid $close-popup;
+        outline: none;
+        &::placeholder {
+            color: $date-color;
+        }
+        @media(max-width: $breakpoint-991) {
+            width: 100%;
+        }
+    }
+
+    &__submit {
+        @include adaptiv-size('height', 70, 60);
+        width: 100%;
+        margin-top: 30px;
+        border: none;
+        cursor: pointer;
+    }
+}

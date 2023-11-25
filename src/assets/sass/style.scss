@@ -12,6 +12,7 @@
 @import './blocks/choice';
 @import './blocks/questions';
 @import './blocks/footer';
+@import './blocks/popup';
 
 
 * {
@@ -120,11 +121,19 @@ div {
     height: 80px;
     border-radius: 100%;
     background-color: $white;
+    
+    cursor: pointer;
+    &:hover {
+        .carousel-arrow {
+            transform: scale(1.2);
+        }
+    }
 }
 
 .carousel-arrow {
     width: 16px;
     height: 30px;
+    transition: .3s all ease;
 
     img {
         object-fit: contain;
@@ -135,6 +144,8 @@ div {
     width: 16px !important;
     height: 16px !important;
     background-color: $white-400 !important;
+    z-index: 1000 !important;
+    cursor: pointer;
 }
 
 .swiper-pagination-bullet-active {

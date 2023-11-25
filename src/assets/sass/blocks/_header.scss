@@ -272,7 +272,6 @@
         font-size: 16px;
     }
 
-    &__nav {}
 
     &__cabinet {
         @extend .header__cabinet;
@@ -362,10 +361,10 @@
 
         &_tel {
             margin-left: 7px;
+            font-weight: 600;
         }
     }
 
-    &__link {}
 }
 
 .socials-header-burger {

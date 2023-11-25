@@ -96,9 +96,6 @@
 }
 
 .map-school {
-
-
-
     &__info {
         position: relative;
         display: flex;
@@ -213,6 +210,10 @@
         @media(max-width: $breakpoint-575) {
             gap: 10px;
             justify-content: center;
+        }
+        @media(max-width: $breakpoint-399) {
+            gap: 10px;
+            justify-content: space-between;
         }
     }
 

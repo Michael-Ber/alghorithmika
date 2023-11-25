@@ -10499,6 +10499,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _teachersSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./teachersSlider */ "./src/assets/js/teachersSlider.js");
 /* harmony import */ var _commentsSlider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./commentsSlider */ "./src/assets/js/commentsSlider.js");
 /* harmony import */ var _accordion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./accordion */ "./src/assets/js/accordion.js");
+/* harmony import */ var _popup__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./popup */ "./src/assets/js/popup.js");
+
 
 
 
@@ -10510,6 +10512,7 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_teachersSlider__WEBPACK_IMPORTED_MODULE_2__["teachersSlider"])();
   Object(_commentsSlider__WEBPACK_IMPORTED_MODULE_3__["commentsSlider"])();
   Object(_accordion__WEBPACK_IMPORTED_MODULE_4__["accordion"])();
+  Object(_popup__WEBPACK_IMPORTED_MODULE_5__["popup"])();
 });
 
 /***/ }),
@@ -10539,7 +10542,8 @@ const paymentSlider = () => {
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__["Navigation"], swiper_modules__WEBPACK_IMPORTED_MODULE_1__["Pagination"]],
       pagination: {
         el: '.carousel-payment__pagination',
-        type: 'bullets'
+        type: 'bullets',
+        clickable: true
       },
       // Navigation arrows
       navigation: {
@@ -10547,6 +10551,70 @@ const paymentSlider = () => {
         prevEl: '.carousel-payment__prev'
       }
     });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/***/ }),
+
+/***/ "./src/assets/js/popup.js":
+/*!********************************!*\
+  !*** ./src/assets/js/popup.js ***!
+  \********************************/
+/*! exports provided: popup */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popup", function() { return popup; });
+const popup = () => {
+  try {
+    const body = document.querySelector('body');
+    const openBtns = document.querySelectorAll('.btn[data-popup]');
+    const popup = document.querySelector('.popup');
+    const close = popup.querySelector('.popup__close');
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        if (!popup.classList.contains('popup_active')) {
+          openPopup();
+        }
+      });
+    });
+    close.addEventListener('click', () => {
+      closePopup();
+    });
+    window.addEventListener('resize', () => {
+      closePopup();
+    });
+    window.addEventListener('click', e => {
+      if (e.target.classList.contains('popup_active')) {
+        closePopup();
+      }
+    });
+    function openPopup() {
+      popup.classList.add('popup_active');
+      body.style.overflow = 'hidden';
+      body.style.marginRight = removeTwitching() + 'px';
+    }
+    function closePopup() {
+      popup.classList.remove('popup_active');
+      body.style.overflow = 'auto';
+      body.style.marginRight = 'unset';
+    }
+    function removeTwitching() {
+      let div = document.createElement('div');
+      div.style.visibility = 'none';
+      div.style.opacity = '0';
+      div.style.width = '50px;';
+      div.style.height = '50px;';
+      div.style.overflow = 'scroll';
+      body.appendChild(div);
+      let offset = div.offsetWidth - div.clientWidth;
+      div.remove();
+      return offset;
+    }
   } catch (error) {
     console.log(error);
   }
@@ -10577,7 +10645,8 @@ const teachersSlider = () => {
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__["Navigation"], swiper_modules__WEBPACK_IMPORTED_MODULE_1__["Pagination"]],
       pagination: {
         el: '.carousel-teachers__pagination',
-        type: 'bullets'
+        type: 'bullets',
+        clickable: true
       },
       breakpoints: {
         768: {

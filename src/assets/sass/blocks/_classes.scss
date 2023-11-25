@@ -2,6 +2,10 @@
     @include adaptiv-size('padding-top', 90, 70);
     padding-bottom: 100px;
 
+    .container {
+        padding: 0 10px !important;
+    }
+
     &__wrapper {
         position: relative;
     }
@@ -61,17 +65,14 @@
 
         &_2 {
             @include adaptiv-size('height', 170, 100);
-            // height: 170px;
         }
 
         &_3 {
             @include adaptiv-size('height', 170, 100);
-            // height: 170px;
         }
 
         &_4 {
             @include adaptiv-size('height', 250, 150);
-            // height: 250px;
             grid-row-start: 1;
             grid-row-end: 2;
             grid-column-start: 4;
@@ -85,7 +86,6 @@
 
         &_5 {
             @include adaptiv-size('height', 300, 180);
-            // height: 300px;
             grid-column-start: 2;
             grid-column-end: 4;
             grid-row-start: 2;
@@ -95,41 +95,34 @@
 
         &_6 {
             @include adaptiv-size('height', 250, 150);
-            // height: 250px;
             grid-column-start: 1;
             grid-column-end: 2;
             grid-row-start: 3;
             grid-row-end: 5;
-            // margin-top: 50px;
             align-self: flex-end;
         }
 
         &_7 {
             @include adaptiv-size('height', 170, 100);
-            // height: 170px;
             grid-row-start: 4;
             grid-row-end: 5;
             grid-column-start: 2;
             grid-column-end: 3;
-            // margin-top: 130px;
             align-self: flex-end;
         }
 
         &_8 {
             @include adaptiv-size('height', 170, 100);
-            // height: 170px;
             grid-row-start: 4;
             grid-row-end: 5;
             grid-column-start: 3;
             grid-column-end: 4;
-            // margin-top: 130px;
             align-self: flex-end;
         }
 
         &_9 {
             @include adaptiv-size('height', 320, 180);
             @include adaptiv-size('margin-top', 95, 60);
-            // height: 320px;
             grid-row-start: 2;
             grid-row-end: 3;
             grid-column-start: 4;
@@ -176,6 +169,3 @@
     }
 }
 
-.container {
-    padding: 0 10px !important;
-}

@@ -3,6 +3,7 @@ import { paymentSlider } from "./paymentSlider";
 import { teachersSlider } from "./teachersSlider";
 import { commentsSlider } from "./commentsSlider";
 import { accordion } from "./accordion";
+import { popup } from "./popup";
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -11,4 +12,5 @@ window.addEventListener('DOMContentLoaded', () => {
     teachersSlider();
     commentsSlider();
     accordion();
+    popup();
 })

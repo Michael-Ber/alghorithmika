@@ -1,12 +1,26 @@
 .footer {
-
-    &__wrapper {
+    background-color: $white-200;
+    @media(max-width: $breakpoint-991) {
+        padding-top: 80px;
     }
 
     &__top {
         display: flex;
         justify-content: flex-start;
         align-items: flex-end;
+        @media(max-width: $breakpoint-991) {
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        @media(max-width: $breakpoint-767) {
+            @include adaptiv-size('gap', 50, 10);
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        @media(max-width: $breakpoint-575) {
+            justify-content: space-between;
+        }
+        
     }
 
     &__middle {
@@ -16,6 +30,10 @@
         margin-top: 30px;
         padding-bottom: 34px;
         border-bottom: 1px solid $white-300;
+        @media(max-width: $breakpoint-767) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     &__bottom {
@@ -25,10 +43,42 @@
         padding: 35px 0 44px 0;
         font-size: 14px;
         font-weight: 500;
+        @media(max-width: $breakpoint-767) {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        @media(max-width: $breakpoint-575) {
+            padding: 35px 0 64px 0;
+        }
+        @media(max-width: $breakpoint-399) {
+            align-items: flex-start;
+        }
     }
 
     &__logo {
+        order:1;
         cursor: pointer;
+
+        svg {
+            &:nth-child(1) {
+                display: block;
+
+                @media(max-width: $breakpoint-991) {
+                    display: none;
+                }
+            }
+
+            &:nth-child(2) {
+                display: none;
+
+                @media(max-width: $breakpoint-991) {
+                    display: block;
+                }
+            }
+        }
+
+        
         &:hover {
             svg {
                 &:nth-child(1) {
@@ -57,14 +107,28 @@
     }
 
     &__contacts {
-        margin-left: 115px;
+        @include adaptiv-size('margin-left', 115, 0);
+        order: 2;
+        @media(max-width: $breakpoint-767) {
+            order: 3;
+            margin-left: 0;
+        }
+        @media(max-width: $breakpoint-575) {
+            width: 100%;
+        }
     }
 
     &__socials {
         display: inline-flex;
         align-items: center;
         gap: 18px;
-        
+        @media(max-width: $breakpoint-767) {
+            display: flex;
+            justify-content: center;
+        }
+        @media(max-width: $breakpoint-399) {
+            justify-content: flex-start;
+        }
     }
 
     &__telegram {
@@ -110,6 +174,16 @@
         font-size: 16px;
         font-weight: 500;
         margin-top: 10px;
+        @media(max-width: $breakpoint-767) {
+            flex-direction: row;
+        }
+        @media(max-width: $breakpoint-575) {
+            flex-direction: column;
+            align-items: center;
+        }
+        @media(max-width: $breakpoint-399) {
+            align-items: flex-start;
+        }
     }
 
     &__skolkovo {
@@ -120,6 +194,19 @@
         max-width: 180px;
         font-size: 15px;
         font-weight: 500;
+        order: 3;
+        @media(max-width: $breakpoint-991) {
+            margin: 0;
+        }
+        @media(max-width: $breakpoint-767) {
+            order: 2;
+            margin: 0;
+        }
+        span {
+            @media(max-width: $breakpoint-991) {
+                display: none;
+            }
+        }
     }
 
     &__skolkovo-icon {
@@ -131,7 +218,17 @@
     
 
     &__license {
-        flex: 0 0 calc(100%/3)
+        flex: 0 0 calc(100%/3);
+        order: 1;
+        @media(max-width: $breakpoint-767) {
+            order: 2;
+            flex: 1 0 auto;
+            text-align: center;
+            margin-top: 30px;
+        }
+        @media(max-width: $breakpoint-399) {
+            text-align: left;
+        }
     }
     &__license-title {
         font-size: 16px;
@@ -148,6 +245,14 @@
 
     &__nav {
         flex: 0 0 50%;
+        order: 2;
+        @media(max-width: $breakpoint-1399) {
+            flex: 0 0 calc(100% - (100%/3));
+        }
+        @media(max-width: $breakpoint-767) {
+            order: 1;
+            width: 100%;
+        }
     }
 
     &__list {
@@ -156,22 +261,69 @@
         row-gap: 20px;
         font-size: 16px;
         font-weight: 500;
+        @media(max-width: $breakpoint-575) {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     &__item {
+        @media(max-width: $breakpoint-767) {
+            justify-self: center;
+        }
+        
+        @media(max-width: $breakpoint-399) {
+            justify-self: flex-start;
+        }
+        &:last-child {
+            @media(max-width: $breakpoint-575) {
+                grid-column-start: 2;
+                grid-column-end: 3;
+            }
+            
+        }
     }
 
     &__link {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: $main-color;
+            transition: .3s all ease;
+        }
+
+        &:hover {
+            &::after {
+                width: 100%;
+            }
+        }
     }
 
     
 
     &__copyright {
+        order: 1;
+        @media(max-width: $breakpoint-767) {
+            order: 3;
+        }
     }
 
     &__offer {
+        order: 2;
+        @media(max-width: $breakpoint-767) {
+            order: 1;
+        }
     }
 
     &__politic {
+        order: 3;
+        @media(max-width: $breakpoint-767) {
+            order: 2;
+        }
     }
 }
