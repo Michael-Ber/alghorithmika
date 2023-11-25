@@ -1,10 +1,14 @@
 .intro {
+    @include adaptiv-size('padding-bottom', 110, 65); 
     position: relative;
-    background: url('./assets/img/intro/intro-bg.jpg') 15% 0% no-repeat, $white-100;
-    min-height: 728px;
+    background: url('./assets/img/intro/intro-bg.jpg') 15% 100% no-repeat, $white-100;
+    background-size:auto;
+    min-height: 100vh;
 
-    @media(max-width: $breakpoint-991) {
+
+    @media(max-width: $breakpoint-1199) {
         background: $white-100;
+        min-height: unset;
     }
 
     &__body {
@@ -17,7 +21,7 @@
     &__wrapper {
         @include adaptiv-size('max-width', 1080, 300); 
 
-        @media(max-width: $breakpoint-1199) {
+        @media(max-width: $breakpoint-991) {
             max-width: 100%;
         }
     }
