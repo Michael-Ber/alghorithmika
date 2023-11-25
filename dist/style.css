@@ -2336,7 +2336,7 @@
   visibility: visible;
 }
 .popup__body {
-  width: calc(385 / (1920 - 375) * (100vw - 375px) + 375px);
+  width: calc(395 / (1920 - 375) * (100vw - 375px) + 365px);
   position: absolute;
   top: 20px;
   left: 50%;
@@ -2353,7 +2353,7 @@
   width: 0px;
 }
 .popup__wrapper {
-  width: calc(205 / (1920 - 375) * (100vw - 375px) + 395px);
+  width: calc(255 / (1920 - 375) * (100vw - 375px) + 345px);
   padding-top: calc(55 / (1920 - 375) * (100vw - 375px) + 105px);
   padding-bottom: calc(-10 / (1920 - 375) * (100vw - 375px) + 73px);
   position: relative;
@@ -2481,7 +2481,7 @@
   }
 }
 .popup__input {
-  width: calc(100 / (1920 - 375) * (100vw - 375px) + 170px);
+  width: calc(120 / (1920 - 375) * (100vw - 375px) + 150px);
   display: block;
   height: 70px;
   font-size: 18px;

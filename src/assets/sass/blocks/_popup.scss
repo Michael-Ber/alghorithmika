@@ -16,7 +16,7 @@
         visibility: visible
     }
     &__body {
-        @include adaptiv-size('width', 760, 375);
+        @include adaptiv-size('width', 760, 365);
         position: absolute;
         top: 20px;
         left: 50%;
@@ -34,7 +34,7 @@
     }
     
     &__wrapper {
-        @include adaptiv-size('width', 600, 395);
+        @include adaptiv-size('width', 600, 345);
         @include adaptiv-size('padding-top', 160, 105);
         @include adaptiv-size('padding-bottom', 63, 73);
         position: relative;
@@ -174,7 +174,7 @@
     }
 
     &__input {
-        @include adaptiv-size('width', 270, 170);
+        @include adaptiv-size('width', 270, 150);
         display: block;
         height: 70px;
         font-size: 18px;
