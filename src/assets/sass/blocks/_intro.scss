@@ -1,6 +1,7 @@
 .intro {
     position: relative;
-    background: url('./assets/img/intro/intro-bg.jpg') 15% 0% no-repeat, $white-100;
+    background: url('./assets/img/intro/intro-bg.jpg') 100% 100% no-repeat, $white-100;
+    background-size: contain;
     min-height: 728px;
 
     @media(max-width: $breakpoint-991) {
@@ -28,20 +29,20 @@
     }
 
     &__help {
-        
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 75%;
+        max-width: 700px;
+        // max-width: 75%;
         gap: 30px;
         margin-top: 60px;
 
         @media(max-width: $breakpoint-1599) {
-            max-width: 85%;
+            // max-width: 85%;
         }
 
         @media(max-width: $breakpoint-1399) {
-            max-width: 100%;
+            // max-width: 100%;
         }
 
         @media(max-width: $breakpoint-575) {
@@ -55,15 +56,16 @@
         justify-content: space-between;
         align-items: center;
         margin-top: 50px;
-        max-width: 70%;
+        // max-width: 60%;
+        max-width: 640px;
         gap: 160px;
 
         @media(max-width: $breakpoint-1599) {
-            max-width: 90%;
+            // max-width: 90%;
         }
 
         @media(max-width: $breakpoint-1399) {
-            max-width: 100%;
+            // max-width: 100%;
         }
 
         @media(max-width: $breakpoint-575) {
@@ -113,6 +115,7 @@
     }
 
     &__consult {
+        max-width: 250px;
         font-size: 14px;
         font-weight: 500;
         order: 2;
