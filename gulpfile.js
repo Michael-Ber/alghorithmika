@@ -118,7 +118,8 @@ gulp.task("prod", () => {
                               }
                             }
                           }
-                        ]
+                        ],
+                        
                       }
                 }))
                 .pipe(gulp.dest(dist));
