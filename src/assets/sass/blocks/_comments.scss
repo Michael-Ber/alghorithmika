@@ -345,12 +345,6 @@
     }
 
 
-    &__date-top {
-        @extend .item-comments__date-top;
-
-        @media(max-width: $breakpoint-991) {}
-    }
-
     &__text {
         @include adaptiv-size('font-size', 16, 14);
 
