@@ -1,6 +1,16 @@
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #f5f5f5;
+  min-height: 130px;
+  transition: 1.3s background-color ease;
   z-index: 100;
+}
+.header_scrolling {
+  background-color: #ffffff;
+  border-bottom: 3px solid #8d30b9;
 }
 .header__container {
   max-width: 1255px;
@@ -13,6 +23,7 @@
   }
 }
 .header__wrapper {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -22,32 +33,61 @@
     align-items: center;
   }
 }
-.header__logo svg:nth-child(1) {
-  display: block;
+.header__rectangle {
+  width: 200px;
+  height: 200px;
+  transition: 0.3s all ease;
+  background-color: #8d30b9;
+  transform: rotate(35deg);
+  position: absolute;
+  top: -85%;
+  left: 0px;
+  z-index: 10;
+  cursor: pointer;
+}
+.header__rectangle:hover {
+  background-color: #a64cd0;
+  box-shadow: 0 0 10px 0 #8d30b9;
 }
 @media (max-width: 991px) {
-  .header__logo svg:nth-child(1) {
+  .header__rectangle {
     display: none;
   }
 }
-.header__logo svg:nth-child(2) {
+.header__logo {
+  padding-top: 20px;
+  padding-right: 100px;
+  cursor: pointer;
+}
+.header__logo a {
+  cursor: pointer;
+}
+.header__logo a svg:nth-child(1) {
+  position: relative;
+  display: block;
+  z-index: 20;
+}
+@media (max-width: 991px) {
+  .header__logo a svg:nth-child(1) {
+    display: none;
+  }
+}
+.header__logo a svg:nth-child(2) {
   display: none;
 }
 @media (max-width: 991px) {
-  .header__logo svg:nth-child(2) {
+  .header__logo a svg:nth-child(2) {
     display: block;
   }
 }
-.header__logo:hover svg:nth-child(1) path {
+.header__logo a:hover .header__rectangle {
+  background-color: #a64cd0;
+  box-shadow: 0 0 10px 0 #8d30b9;
+}
+.header__logo a:hover svg:nth-child(2) path {
   transition: 0.3s ease fill;
 }
-.header__logo:hover svg:nth-child(1) path:nth-child(1) {
-  fill: #a64cd0;
-}
-.header__logo:hover svg:nth-child(2) path {
-  transition: 0.3s ease fill;
-}
-.header__logo:hover svg:nth-child(2) path:nth-child(1), .header__logo:hover svg:nth-child(2) path:nth-child(2) {
+.header__logo a:hover svg:nth-child(2) path:nth-child(1), .header__logo a:hover svg:nth-child(2) path:nth-child(2) {
   fill: #a64cd0;
 }
 .header__menu {
@@ -70,6 +110,7 @@
   align-items: flex-start;
   gap: 10px;
   font-weight: 500;
+  cursor: pointer;
 }
 .header__city::before, .header-burger__city::before {
   content: url("./assets/icons/logo-mini.svg");
@@ -276,10 +317,31 @@
 }
 
 .intro {
+  min-height: calc(128 / (1920 - 375) * (100vw - 375px) + 600px);
   position: relative;
-  background: url("./assets/img/intro/intro-bg.jpg") 100% 100% no-repeat, #f5f5f5;
-  background-size: contain;
-  min-height: 728px;
+  background-color: #f5f5f5;
+  padding-bottom: 50px;
+  margin-top: 130px;
+  padding-top: 30px;
+}
+@media (max-width: 991px) {
+  .intro {
+    min-height: unset;
+  }
+}
+.intro__bg {
+  width: calc(857 / (1920 - 375) * (100vw - 375px) + 30px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+@media (max-width: 991px) {
+  .intro__bg {
+    display: none;
+  }
 }
 @media (max-width: 991px) {
   .intro {
@@ -322,8 +384,8 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 50px;
-  max-width: 640px;
-  gap: 160px;
+  max-width: 615px;
+  gap: 140px;
 }
 @media (max-width: 575px) {
   .intro__signup {
@@ -2614,4 +2676,14 @@ div img {
 
 .swiper-pagination-bullet-active {
   background-color: #8d30b9 !important;
+}
+
+.block-anim {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: 0.8s all ease;
+}
+.block-anim_active {
+  opacity: 1;
+  transform: translateY(0);
 }

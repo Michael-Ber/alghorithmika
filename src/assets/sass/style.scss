@@ -121,8 +121,9 @@ div {
     height: 80px;
     border-radius: 100%;
     background-color: $white;
-    
+
     cursor: pointer;
+
     &:hover {
         .carousel-arrow {
             transform: scale(1.2);
@@ -150,4 +151,15 @@ div {
 
 .swiper-pagination-bullet-active {
     background-color: $main-color !important;
+}
+
+.block-anim {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: .8s all ease;
+
+    &_active {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

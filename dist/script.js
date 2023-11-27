@@ -10485,6 +10485,33 @@ const commentsSlider = () => {
 
 /***/ }),
 
+/***/ "./src/assets/js/headerAfterScroll.js":
+/*!********************************************!*\
+  !*** ./src/assets/js/headerAfterScroll.js ***!
+  \********************************************/
+/*! exports provided: headerAfterScroll */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "headerAfterScroll", function() { return headerAfterScroll; });
+const headerAfterScroll = () => {
+  try {
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('header_scrolling');
+      } else {
+        header.classList.remove('header_scrolling');
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/***/ }),
+
 /***/ "./src/assets/js/main.js":
 /*!*******************************!*\
   !*** ./src/assets/js/main.js ***!
@@ -10500,6 +10527,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _commentsSlider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./commentsSlider */ "./src/assets/js/commentsSlider.js");
 /* harmony import */ var _accordion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./accordion */ "./src/assets/js/accordion.js");
 /* harmony import */ var _popup__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./popup */ "./src/assets/js/popup.js");
+/* harmony import */ var _titleAnimation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./titleAnimation */ "./src/assets/js/titleAnimation.js");
+/* harmony import */ var _headerAfterScroll__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./headerAfterScroll */ "./src/assets/js/headerAfterScroll.js");
+
+
 
 
 
@@ -10513,6 +10544,8 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_commentsSlider__WEBPACK_IMPORTED_MODULE_3__["commentsSlider"])();
   Object(_accordion__WEBPACK_IMPORTED_MODULE_4__["accordion"])();
   Object(_popup__WEBPACK_IMPORTED_MODULE_5__["popup"])();
+  Object(_titleAnimation__WEBPACK_IMPORTED_MODULE_6__["titleAnimation"])();
+  Object(_headerAfterScroll__WEBPACK_IMPORTED_MODULE_7__["headerAfterScroll"])();
 });
 
 /***/ }),
@@ -10665,6 +10698,45 @@ const teachersSlider = () => {
         prevEl: '.carousel-teachers__prev'
       }
     });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/***/ }),
+
+/***/ "./src/assets/js/titleAnimation.js":
+/*!*****************************************!*\
+  !*** ./src/assets/js/titleAnimation.js ***!
+  \*****************************************/
+/*! exports provided: titleAnimation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "titleAnimation", function() { return titleAnimation; });
+const titleAnimation = () => {
+  try {
+    const blocksToAnimate = document.querySelectorAll('.block-anim');
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    window.addEventListener('scroll', () => {
+      animateBlock();
+    });
+    animateBlock();
+    function animateBlock() {
+      try {
+        blocksToAnimate.forEach(block => {
+          if (block.getBoundingClientRect().top <= window.innerHeight) {
+            block.classList.add('block-anim_active');
+          }
+          if (scrollY - block.getBoundingClientRect().top > -100) {
+            block.classList.add('block-anim_active');
+          }
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }
   } catch (error) {
     console.log(error);
   }

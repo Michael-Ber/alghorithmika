@@ -1,8 +1,29 @@
 .intro {
+    @include adaptiv-size('min-height', 728, 600);
     position: relative;
-    background: url('./assets/img/intro/intro-bg.jpg') 100% 100% no-repeat, $white-100;
-    background-size: contain;
-    min-height: 728px;
+    background-color: $white-100;
+    padding-bottom: 50px;
+    margin-top: 130px;
+    padding-top: 30px;
+
+    @media(max-width: $breakpoint-991) {
+        min-height: unset;
+    }
+
+    &__bg {
+        @include adaptiv-size('width', 887, 30);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        @media(max-width: $breakpoint-991) {
+            display: none;
+        }
+    }
+
 
     @media(max-width: $breakpoint-991) {
         background: $white-100;
@@ -16,7 +37,7 @@
     }
 
     &__wrapper {
-        @include adaptiv-size('max-width', 1080, 300); 
+        @include adaptiv-size('max-width', 1080, 300);
 
         @media(max-width: $breakpoint-1199) {
             max-width: 100%;
@@ -33,17 +54,8 @@
         justify-content: space-between;
         align-items: center;
         max-width: 700px;
-        // max-width: 75%;
         gap: 30px;
         margin-top: 60px;
-
-        @media(max-width: $breakpoint-1599) {
-            // max-width: 85%;
-        }
-
-        @media(max-width: $breakpoint-1399) {
-            // max-width: 100%;
-        }
 
         @media(max-width: $breakpoint-575) {
             flex-direction: column;
@@ -56,17 +68,8 @@
         justify-content: space-between;
         align-items: center;
         margin-top: 50px;
-        // max-width: 60%;
-        max-width: 640px;
-        gap: 160px;
-
-        @media(max-width: $breakpoint-1599) {
-            // max-width: 90%;
-        }
-
-        @media(max-width: $breakpoint-1399) {
-            // max-width: 100%;
-        }
+        max-width: 615px;
+        gap: 140px;
 
         @media(max-width: $breakpoint-575) {
             flex-direction: column;

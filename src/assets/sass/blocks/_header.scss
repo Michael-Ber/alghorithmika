@@ -1,6 +1,17 @@
 .header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $white-100;
+    min-height: 130px;
+    transition: 1.3s background-color ease;
     z-index: 100;
+
+    &_scrolling {
+        background-color: $white;
+        border-bottom: 3px solid $main-color;
+    }
 
     &__container {
         max-width: 1255px;
@@ -13,6 +24,7 @@
     }
 
     &__wrapper {
+        position: relative;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -22,50 +34,80 @@
         }
     }
 
-    &__logo {
-        svg {
-            &:nth-child(1) {
-                display: block;
-
-                @media(max-width: $breakpoint-991) {
-                    display: none;
-                }
-            }
-
-            &:nth-child(2) {
-                display: none;
-
-                @media(max-width: $breakpoint-991) {
-                    display: block;
-                }
-            }
-        }
+    &__rectangle {
+        width: 200px;
+        height: 200px;
+        transition: .3s all ease;
+        background-color: $main-color;
+        transform: rotate(35deg);
+        position: absolute;
+        top: -85%;
+        left: 0px;
+        z-index: 10;
+        cursor: pointer;
 
         &:hover {
+
+            background-color: lighten($main-color, 10%);
+            box-shadow: 0 0 10px 0 $main-color
+        }
+
+        @media(max-width: $breakpoint-991) {
+            display: none;
+        }
+    }
+
+    &__logo {
+        padding-top: 20px;
+        padding-right: 100px;
+        cursor: pointer;
+
+        a {
+            cursor: pointer;
+
             svg {
                 &:nth-child(1) {
-                    path {
-                        transition: .3s ease fill;
+                    position: relative;
+                    display: block;
+                    z-index: 20;
 
-                        &:nth-child(1) {
-                            fill: lighten($main-color, 10%)
-                        }
+                    @media(max-width: $breakpoint-991) {
+                        display: none;
                     }
                 }
 
                 &:nth-child(2) {
-                    path {
-                        transition: .3s ease fill;
+                    display: none;
 
-                        &:nth-child(1),
-                        &:nth-child(2) {
-                            fill: lighten($main-color, 10%)
-                        }
+                    @media(max-width: $breakpoint-991) {
+                        display: block;
                     }
                 }
+            }
 
+            &:hover {
+                .header__rectangle {
+                    background-color: lighten($main-color, 10%);
+                    box-shadow: 0 0 10px 0 $main-color
+                }
+
+                svg {
+                    &:nth-child(2) {
+                        path {
+                            transition: .3s ease fill;
+
+                            &:nth-child(1),
+                            &:nth-child(2) {
+                                fill: lighten($main-color, 10%)
+                            }
+                        }
+                    }
+
+                }
             }
         }
+
+
     }
 
     &__menu {
@@ -89,6 +131,7 @@
         align-items: flex-start;
         gap: 10px;
         font-weight: 500;
+        cursor: pointer;
 
         &::before {
             content: url('./assets/icons/logo-mini.svg');

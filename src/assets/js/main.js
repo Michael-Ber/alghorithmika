@@ -4,6 +4,8 @@ import { teachersSlider } from "./teachersSlider";
 import { commentsSlider } from "./commentsSlider";
 import { accordion } from "./accordion";
 import { popup } from "./popup";
+import { titleAnimation } from "./titleAnimation";
+import { headerAfterScroll } from "./headerAfterScroll";
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -13,4 +15,6 @@ window.addEventListener('DOMContentLoaded', () => {
     commentsSlider();
     accordion();
     popup();
+    titleAnimation();
+    headerAfterScroll();
 })
