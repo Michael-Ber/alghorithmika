@@ -6,6 +6,7 @@ import { accordion } from "./accordion";
 import { popup } from "./popup";
 import { titleAnimation } from "./titleAnimation";
 import { headerAfterScroll } from "./headerAfterScroll";
+import { readMore } from "./readMore";
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -17,4 +18,5 @@ window.addEventListener('DOMContentLoaded', () => {
     popup();
     titleAnimation();
     headerAfterScroll();
+    readMore();
 })

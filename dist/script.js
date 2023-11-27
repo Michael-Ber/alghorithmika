@@ -10529,6 +10529,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _popup__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./popup */ "./src/assets/js/popup.js");
 /* harmony import */ var _titleAnimation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./titleAnimation */ "./src/assets/js/titleAnimation.js");
 /* harmony import */ var _headerAfterScroll__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./headerAfterScroll */ "./src/assets/js/headerAfterScroll.js");
+/* harmony import */ var _readMore__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./readMore */ "./src/assets/js/readMore.js");
+
 
 
 
@@ -10546,6 +10548,7 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_popup__WEBPACK_IMPORTED_MODULE_5__["popup"])();
   Object(_titleAnimation__WEBPACK_IMPORTED_MODULE_6__["titleAnimation"])();
   Object(_headerAfterScroll__WEBPACK_IMPORTED_MODULE_7__["headerAfterScroll"])();
+  Object(_readMore__WEBPACK_IMPORTED_MODULE_8__["readMore"])();
 });
 
 /***/ }),
@@ -10651,6 +10654,34 @@ const popup = () => {
       div.remove();
       return offset;
     }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/***/ }),
+
+/***/ "./src/assets/js/readMore.js":
+/*!***********************************!*\
+  !*** ./src/assets/js/readMore.js ***!
+  \***********************************/
+/*! exports provided: readMore */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "readMore", function() { return readMore; });
+const readMore = () => {
+  try {
+    const linksMore = document.querySelectorAll('.readmore');
+    linksMore.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        link.nextElementSibling.style.display = 'inline';
+        link.previousElementSibling.style.display = 'none';
+        link.style.display = 'none';
+      });
+    });
   } catch (error) {
     console.log(error);
   }

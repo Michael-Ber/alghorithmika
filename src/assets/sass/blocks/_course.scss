@@ -28,6 +28,11 @@
         background-color: $white-200;
         border-radius: 20px;
         padding: 30px 30px 40px 30px;
+        transition: .3s all ease;
+
+        &:hover {
+            box-shadow: 0 0 10px 0 $main-color;
+        }
     }
 }
 
