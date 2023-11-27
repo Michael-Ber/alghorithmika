@@ -317,7 +317,7 @@
 }
 
 .intro {
-  min-height: calc(128 / (1920 - 375) * (100vw - 375px) + 600px);
+  min-height: calc(200 / (1920 - 375) * (100vw - 375px) + 600px);
   position: relative;
   background-color: #f5f5f5;
   padding-bottom: 50px;
@@ -327,6 +327,8 @@
 @media (max-width: 991px) {
   .intro {
     min-height: unset;
+    padding-top: 0;
+    margin-top: 100px;
   }
 }
 .intro__bg {
