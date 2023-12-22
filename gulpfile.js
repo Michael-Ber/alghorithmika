@@ -18,24 +18,6 @@ import changed from 'gulp-changed';
 
 const sass = gulpSass(nodeSass);
 
-
-
-
-
-// const gulp = require("gulp");
-// const webpack = require("webpack-stream");
-// const browsersync = require("browser-sync");
-// const sass = require('gulp-sass')(require('sass'));
-// const autoprefixer = require("autoprefixer");
-// const cleanCSS = require("gulp-clean-css");
-// const postcss = require("gulp-postcss");
-// const imagemin = require('gulp-imagemin');
-// const htmlmin = require('gulp-htmlmin');
-// const webpConv = require('gulp-webp');
-// const changed = require('gulp-changed');
-// const multiDest = require('gulp-multi-dest');
-
-
 // const dist = "../../../js/OpenServer/domains/portfolio";
 const dist = "./dist";
 

@@ -21,6 +21,7 @@
     &__title {
         text-align: left !important;
         max-width: 65%;
+
         @media(max-width: $breakpoint-767) {
             max-width: 100%;
         }
@@ -44,10 +45,13 @@
         border: none;
         border-radius: 50px;
         outline: none;
+
         &::placeholder {
             color: $date-color;
         }
+
         &:nth-child(2) {
+
             &::-webkit-outer-spin-button,
             &::-webkit-inner-spin-button {
                 -webkit-appearance: none;
