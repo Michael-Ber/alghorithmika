@@ -8,7 +8,7 @@ export const popup = () => {
         openBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                if(!popup.classList.contains('popup_active')) {
+                if (!popup.classList.contains('popup_active')) {
                     openPopup()
                 }
             })
@@ -24,7 +24,7 @@ export const popup = () => {
         // })
 
         window.addEventListener('click', (e) => {
-            if(e.target.classList.contains('popup_active')) {
+            if (e.target.classList.contains('popup_active')) {
                 closePopup();
             }
         })
@@ -33,7 +33,7 @@ export const popup = () => {
             popup.classList.add('popup_active');
             body.style.overflow = 'hidden';
             body.style.marginRight = removeTwitching() + 'px';
-            
+
         }
         function closePopup() {
             popup.classList.remove('popup_active');
@@ -42,11 +42,10 @@ export const popup = () => {
         }
         function removeTwitching() {
             let div = document.createElement('div');
-            div.style.visibility = 'none';
-            div.style.opacity = '0';
             div.style.width = '50px;';
             div.style.height = '50px;';
-            div.style.overflow = 'scroll';
+            div.style.overflowY = 'scroll';
+            div.style.visibility = 'hidden';
             body.appendChild(div);
             let offset = div.offsetWidth - div.clientWidth;
             div.remove();
