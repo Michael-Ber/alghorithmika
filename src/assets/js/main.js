@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
     teachersSlider();
     commentsSlider();
     accordion();
-    // popup();
+    popup();
     titleAnimation();
     headerAfterScroll();
     readMore();
