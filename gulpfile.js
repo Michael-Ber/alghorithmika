@@ -112,7 +112,7 @@ gulp.task("prod", () => {
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([autoprefixer()]))
     .pipe(cleanCSS())
-    .pipe(gulp.dest(dist));
+    .pipe(gulp.dest(dist))
 
   return gulp.src("./src/assets/js/main.js")
     .pipe(webpack({
