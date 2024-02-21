@@ -10711,7 +10711,7 @@ window.addEventListener('DOMContentLoaded', () => {
   (0,_teachersSlider_js__WEBPACK_IMPORTED_MODULE_2__.teachersSlider)();
   (0,_commentsSlider_js__WEBPACK_IMPORTED_MODULE_3__.commentsSlider)();
   (0,_accordion_js__WEBPACK_IMPORTED_MODULE_4__.accordion)();
-  // popup();
+  (0,_popup_js__WEBPACK_IMPORTED_MODULE_5__.popup)();
   (0,_titleAnimation_js__WEBPACK_IMPORTED_MODULE_6__.titleAnimation)();
   (0,_headerAfterScroll_js__WEBPACK_IMPORTED_MODULE_7__.headerAfterScroll)();
   (0,_readMore_js__WEBPACK_IMPORTED_MODULE_8__.readMore)();
