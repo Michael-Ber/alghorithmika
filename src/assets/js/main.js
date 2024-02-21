@@ -7,6 +7,7 @@ import { popup } from "./popup.js";
 import { titleAnimation } from "./titleAnimation.js";
 import { headerAfterScroll } from "./headerAfterScroll.js";
 import { readMore } from "./readMore.js";
+import { showMap } from "./showMap.js";
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -19,4 +20,5 @@ window.addEventListener('DOMContentLoaded', () => {
     titleAnimation();
     headerAfterScroll();
     readMore();
+    showMap();
 })

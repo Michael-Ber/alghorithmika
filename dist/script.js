@@ -278,6 +278,41 @@ const readMore = () => {
 
 /***/ }),
 
+/***/ "./src/assets/js/showMap.js":
+/*!**********************************!*\
+  !*** ./src/assets/js/showMap.js ***!
+  \**********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   showMap: () => (/* binding */ showMap)
+/* harmony export */ });
+const showMap = () => {
+  try {
+    const mapImg = document.querySelector('#map');
+    const body = document.querySelector('body');
+    const map = document.createElement('div');
+    map.classList.add('modal-map');
+    const mapScript = document.createElement('div');
+    mapScript.classList.add('modal-map__script');
+    mapScript.innerHTML = `<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa10fbb640e6ba5fd618bbc52b24833beac883e0e5036130f525f73a31502bd09&amp;source=constructor" width="748" height="400" frameborder="0"></iframe>`;
+    mapImg.addEventListener('click', () => {
+      map.appendChild(mapScript);
+      body.appendChild(map);
+    });
+    window.addEventListener('click', e => {
+      if (e.target.classList.contains('modal-map')) {
+        body.removeChild(map);
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/***/ }),
+
 /***/ "./src/assets/js/teachersSlider.js":
 /*!*****************************************!*\
   !*** ./src/assets/js/teachersSlider.js ***!
@@ -10696,6 +10731,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _titleAnimation_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./titleAnimation.js */ "./src/assets/js/titleAnimation.js");
 /* harmony import */ var _headerAfterScroll_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./headerAfterScroll.js */ "./src/assets/js/headerAfterScroll.js");
 /* harmony import */ var _readMore_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./readMore.js */ "./src/assets/js/readMore.js");
+/* harmony import */ var _showMap_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./showMap.js */ "./src/assets/js/showMap.js");
+
 
 
 
@@ -10715,6 +10752,7 @@ window.addEventListener('DOMContentLoaded', () => {
   (0,_titleAnimation_js__WEBPACK_IMPORTED_MODULE_6__.titleAnimation)();
   (0,_headerAfterScroll_js__WEBPACK_IMPORTED_MODULE_7__.headerAfterScroll)();
   (0,_readMore_js__WEBPACK_IMPORTED_MODULE_8__.readMore)();
+  (0,_showMap_js__WEBPACK_IMPORTED_MODULE_9__.showMap)();
 });
 })();
 
