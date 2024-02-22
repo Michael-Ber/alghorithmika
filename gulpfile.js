@@ -59,6 +59,10 @@ gulp.task("build-js", () => {
                 }]]
               }
             }
+          },
+          {
+            test: /\.(sass|less|css)$/,
+            use: ["style-loader", "css-loader", 'sass-loader'],
           }
         ]
       }
