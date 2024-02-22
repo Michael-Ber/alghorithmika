@@ -26,8 +26,36 @@
 
     &__script {
         @include adaptiv-size('width', 760, 335);
-        // width: 760px;
+        position: relative;
         height: 400px;
+
+        &::after {
+            @include adaptiv-size('font-size', 40, 20);
+            content: 'посмотреть на карте';
+            visibility: hidden;
+            opacity: 0;
+            color: $white-400;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(#000, .7);
+            z-index: 1000;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: .3s all ease;
+        }
+
+        &:hover {
+            &::after {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
 
         img {
             width: 100%;
@@ -100,14 +128,38 @@
     background-color: rgba(#000, .7);
     z-index: 1000;
 
+    &__close {
+        font-size: 40px;
+        color: $white;
+        position: absolute;
+        top: 0;
+        left: 71%;
+        line-height: 30px;
+        cursor: pointer;
+    }
+
     &__script {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
 
         iframe {
             border-radius: 10px;
+
+            @media(max-width: $breakpoint-991) {
+                max-width: 575px;
+            }
+
+            @media(max-width: $breakpoint-767) {
+                max-width: 400px;
+            }
+
+            @media(max-width: $breakpoint-575) {
+                max-width: 100%;
+            }
         }
     }
 }
