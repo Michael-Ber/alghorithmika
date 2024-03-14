@@ -47,6 +47,9 @@
     padding-top: 20px;
     padding-right: 100px;
     cursor: pointer; }
+    @media (max-width: 991px) {
+      .header__logo {
+        padding-right: 0; } }
     .header__logo a {
       cursor: pointer; }
       .header__logo a svg:nth-child(1) {
