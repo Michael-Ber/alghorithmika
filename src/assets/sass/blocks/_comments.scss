@@ -104,28 +104,7 @@
         &_video {
             background-color: $red-100;
 
-            &::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 75px;
-                height: 75px;
-                border-radius: 100%;
-                background-color: $white;
-                cursor: pointer;
-            }
-
-            &::before {
-                content: url('./assets/icons/comments/play.svg');
-                position: absolute;
-                top: calc(50% + 10px);
-                left: calc(50% - 15px);
-                transform: translate(-50%, -50%);
-                z-index: 100;
-                cursor: pointer;
-            }
+            
         }
 
         &:hover {
@@ -140,6 +119,7 @@
     &__arrow-wrapper {
         background-color: $white !important;
         top: 0;
+        user-select: none;
 
         @media(max-width: $breakpoint-991) {
             display: none !important;
@@ -165,7 +145,7 @@
         top: 0;
         left: 0;
         right: 0;
-        transition: .3s all ease;
+        transition: .3s transform ease;
     }
 
     &__gradient {
@@ -187,23 +167,29 @@
         }
     }
 
-    &__stars {
-        position: relative;
-        display: flex;
-        gap: 5px;
-        z-index: 100;
-    }
+    &__play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 75px;
+        height: 75px;
+        border-radius: 100%;
+        background-color: $white;
+        border: none;
+        cursor: pointer;
 
-    &__star {
-        width: 18px;
-        height: 18px;
-
-        &_yellow {
-            width: 22px;
-            height: 22px;
+        &::before {
+            content: url('./assets/icons/comments/play.svg');
+            position: absolute;
+            top: calc(50% + 10px);
+            left: calc(50% - 15px);
+            transform: translate(-50%, -50%);
+            z-index: 100;
         }
     }
 
+    
     &__name {
         font-size: 18px;
         font-weight: 600;
@@ -215,18 +201,17 @@
         display: inline;
         font-weight: 500;
         line-height: 150%;
-        margin-top: 10px;
     }
 
     &__link {
         display: block;
         font-size: 14px;
         font-weight: 500;
-        margin-top: 10px;
         text-decoration-style: wavy;
         text-decoration-line: underline;
         text-decoration-color: $white;
         text-underline-offset: 5px;
+        margin-top: 10px;
     }
 }
 
@@ -247,8 +232,6 @@
     align-items: center;
 
     &__stars {
-        display: flex;
-        gap: 5px;
         margin-top: 15px;
     }
 
@@ -308,11 +291,6 @@
         }
     }
 
-    &__stars {
-        display: flex;
-        gap: 5px;
-
-    }
 
     &__yandex {
         @include adaptiv-size('font-size', 16, 14);
@@ -355,5 +333,18 @@
     &__read {
         @include adaptiv-size('font-size', 16, 14);
         color: $main-color;
+    }
+}
+
+.stars {
+    display: flex;
+    gap: 5px;
+    &__star-white {
+        width: 18px;
+        height: 18px;
+    }
+    &__star-yellow {
+        width: 22px;
+        height: 22px;
     }
 }

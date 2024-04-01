@@ -134,8 +134,6 @@
     &__telegram {
         &:hover {
             svg path {
-                transition: .3s all ease;
-                
                 &:nth-child(1),
                 &:nth-child(2) {
                     fill: darken($main-color, 10%)
@@ -151,7 +149,6 @@
     &__whatsapp {
         &:hover {
             svg path {
-                transition: .3s all ease;
 
                 &:nth-child(1) {
                     fill: darken($main-color, 10%)
@@ -294,7 +291,7 @@
             width: 0%;
             height: 2px;
             background-color: $main-color;
-            transition: .3s all ease;
+            transition: .3s width ease;
         }
 
         &:hover {
@@ -324,6 +321,9 @@
         order: 3;
         @media(max-width: $breakpoint-767) {
             order: 2;
+        }
+        &:hover {
+            text-decoration: underline;
         }
     }
 }

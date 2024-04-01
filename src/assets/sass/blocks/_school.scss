@@ -37,12 +37,25 @@
 .grid-school {
 
     &__item {
+        padding-top: 80px;
+
+        &_1 {
+            background: url('./assets/icons/school/profi.png') top left no-repeat;
+        }
+        &_2 {
+            background: url('./assets/icons/school/group.svg') top left no-repeat;
+        }
+        &_3 {
+            background: url('./assets/icons/school/schedule.svg') top left no-repeat;
+        }
+        &_4 {
+            background: url('./assets/icons/school/all.svg') top left no-repeat;
+        }
+
         @media(max-width: $breakpoint-575) {
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: 30px;
-            padding: 0 20px 0 20px;
+            padding-left: 120px;
+            padding-top: 0;
+            background-size: contain;
         }
     }
 
@@ -55,34 +68,6 @@
         }
     }
 
-    &__img {
-        height: 80px;
-        flex-shrink: 0;
-
-        @media(max-width: $breakpoint-575) {
-            width: 60px !important;
-
-            img {
-                object-fit: contain !important;
-            }
-        }
-
-        &_1 {
-            width: 66px;
-        }
-
-        &_2 {
-            width: 87px;
-        }
-
-        &_3 {
-            width: 74px;
-        }
-
-        &_4 {
-            width: 82px;
-        }
-    }
 
     &__title {
         @include adaptiv-size('font-size', 20, 18);
@@ -236,8 +221,7 @@
         }
     }
 
-    &__license,
-    &__skolkovo {
+    &__bottom-block {
         @include adaptiv-size('width', 460, 260);
         display: flex;
         align-items: center;

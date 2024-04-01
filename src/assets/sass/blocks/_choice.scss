@@ -7,7 +7,6 @@
     padding: 103px 0 96px 0;
 
     @media(max-width: $breakpoint-767) {
-        min-height: 1164px;
         background-image: url('./assets/img/choice/choice-bg-mini.jpg');
         background-repeat: no-repeat;
         background-position: 0% 80%;
@@ -29,6 +28,7 @@
 
     &__form {
         @include adaptiv-size('margin-top', 60, 50);
+        
         display: flex;
         flex-direction: column;
         max-width: 460px;
@@ -36,6 +36,7 @@
     }
 
     &__input {
+        font-family: "Montserrat", sans-serif;
         font-size: 18px;
         width: 100%;
         height: 60px;
@@ -46,18 +47,18 @@
         border-radius: 50px;
         outline: none;
 
-        &::placeholder {
-            color: $date-color;
-        }
-
-        &:nth-child(2) {
-
+        &.input-phone {
             &::-webkit-outer-spin-button,
             &::-webkit-inner-spin-button {
                 -webkit-appearance: none;
                 margin: 0;
             }
         }
+
+        &::placeholder {
+            color: $date-color;
+        }
+
     }
 
     &__btn {
@@ -77,3 +78,4 @@
         text-decoration: underline;
     }
 }
+

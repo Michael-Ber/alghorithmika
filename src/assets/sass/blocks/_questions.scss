@@ -49,44 +49,46 @@
         justify-content: space-between;
         align-items: center;
         font-weight: 600;
-        span {
-            @include adaptiv-size('width', 50, 35);
-            @include adaptiv-size('height', 50, 35);
-            position: relative;
-            display: block;
-            flex-shrink: 0;
-            border-radius: 100%;
-            background-color: $white-200;
-            transition: .3s all ease;
-            &::after {
-                content: '';
-                @include adaptiv-size('height', 30, 20);
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 2px;
-                border-top-right-radius: 5px;
-                border-top-left-radius: 5px;
-                border-bottom-right-radius: 5px;
-                border-bottom-left-radius: 5px;
-                background-color: $main-color;
-            }
-            &::before {
-                content: '';
-                position: absolute;
-                @include adaptiv-size('width', 30, 20);
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                height: 2px;
-                border-top-right-radius: 5px;
-                border-top-left-radius: 5px;
-                border-bottom-right-radius: 5px;
-                border-bottom-left-radius: 5px;
-                background-color: $main-color;
-            }
+        gap: 10px;
+    }
+    &__question-plus {
+        @include adaptiv-size('width', 50, 35);
+        @include adaptiv-size('height', 50, 35);
+        position: relative;
+        display: block;
+        flex-shrink: 0;
+        border-radius: 100%;
+        background-color: $white-200;
+        transition: .3s transform ease;
+        &::after {
+            content: '';
+            @include adaptiv-size('height', 30, 20);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 2px;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            background-color: $main-color;
         }
+        &::before {
+            content: '';
+            position: absolute;
+            @include adaptiv-size('width', 30, 20);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 2px;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            background-color: $main-color;
+        }
+        
     }
 
     &__answer {

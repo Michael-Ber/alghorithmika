@@ -3,14 +3,14 @@
 
     &__title {
         text-align: left !important;
-
-        span {
+        padding-bottom: 27px;
+        &_red {
             color: $red-100
         }
     }
 
     &__subtitle {
-        margin-top: 27px;
+        padding-bottom: 30px;
     }
 
     &__cards {
@@ -18,8 +18,7 @@
         display: grid;
         grid-template-columns: repeat(4, minmax(200px, 260px));
         justify-content: center;
-        margin-top: 30px;
-
+        padding-bottom: 26px;
 
         @media(max-width: $breakpoint-1399) {
             grid-template-columns: repeat(2, 260px);
@@ -68,7 +67,6 @@
     &__carousel {
         position: relative;
         overflow: hidden;
-        margin-top: 26px;
     }
 }
 
@@ -76,67 +74,70 @@
 
     &__title {
         @include adaptiv-size('font-size', 30, 20);
+        padding-bottom: 10px;
+        @media(max-width: $breakpoint-767) {
+            padding-bottom: 7px;
+        }
 
     }
 
     &__subtitle {
         @include adaptiv-size('font-size', 20, 14);
-        margin-top: 10px;
-
+        padding-bottom: 10px;
         @media(max-width: $breakpoint-767) {
-            margin-top: 7px;
+            padding-bottom: 7px;
         }
+        
     }
 
     &__discount {
         @include adaptiv-size('font-size', 16, 12);
         display: inline-block;
-        margin-top: 10px;
         color: $white;
         padding: 5px 11px;
         background-color: $red-100;
         border-radius: 7px;
         transform: rotate(-10deg);
-
-        span {
-            display: inline;
-
-            @media(max-width: $breakpoint-767) {
-                display: none;
-            }
+        margin-bottom: 10px;
+        @media(max-width: $breakpoint-767) {
+            margin-bottom: 7px;
         }
 
-        i {
-            display: none;
+    }
 
-            @media(max-width: $breakpoint-767) {
-                display: inline-block;
-            }
-        }
+    &__discount-text {
+        display: inline;
 
         @media(max-width: $breakpoint-767) {
-            margin-top: 7px;
+            display: none;
+        }
+    }
+    &__discount-minus {
+        display: none;
+
+        @media(max-width: $breakpoint-767) {
+            display: inline-block;
         }
     }
 
     &__price {
         @include adaptiv-size('font-size', 30, 20);
-        margin-top: 10px;
         font-weight: 600;
-
-        span {
-            @include adaptiv-size('font-size', 20, 12);
-            font-weight: 400;
-
-            span {
-                @media(max-width: $breakpoint-767) {
-                    display: none;
-                }
-            }
+        padding-bottom: 15px;
+        @media(max-width: $breakpoint-767) {
+            padding-bottom: 8px;
         }
-
         @media(max-width: $breakpoint-767) {
             margin-top: 7px;
+        }
+    }
+    &__price-lesson {
+        @include adaptiv-size('font-size', 20, 12);
+            font-weight: 400;
+    }
+    &__price-for {
+        @media(max-width: $breakpoint-767) {
+            display: none;
         }
     }
 
@@ -160,11 +161,8 @@
     &__btn {
         @include adaptiv-size('width', 200, 117);
         @include adaptiv-size('height', 50, 35);
-        margin-top: 15px;
 
-        @media(max-width: $breakpoint-767) {
-            margin-top: 8px;
-        }
+        
     }
 }
 
@@ -192,7 +190,7 @@
 
     &__arrow-wrapper {
         top: 50%;
-
+        user-select: none;
         @media(max-width: $breakpoint-767) {
             display: none !important;
         }
@@ -209,7 +207,11 @@
     }
 
     &__pagination {
+        display: flex;
+        gap: 20px;
         position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         bottom: 20px !important;
         text-align: center;
 

@@ -27,6 +27,7 @@ body {
     font-size: 16px;
     font-weight: 400;
     color: $text-color;
+    min-width: 375px;
 }
 
 .container {
@@ -45,13 +46,12 @@ a {
     color: inherit;
 }
 
-div {
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
+
 
 .section-title {
     @include adaptiv-size('font-size', 56, 36);
@@ -60,6 +60,7 @@ div {
 }
 
 .btn {
+    font-family: "Montserrat", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,7 +74,7 @@ div {
     border: 2px solid $main-color;
     background-color: transparent;
     text-align: center;
-    transition: .3s all ease;
+    transition: .3s color ease, .3s border-color ease, .3s box-shadow ease;
 
     &:hover {
         color: lighten($main-color, 20%);
@@ -90,7 +91,7 @@ div {
     color: $white;
     font-weight: 700;
     text-align: center;
-    transition: .3s all ease;
+    transition: .3s border-color ease, .3s background-color ease;
 
     &:hover {
         background-color: lighten($main-color, 10%);
@@ -105,7 +106,7 @@ div {
     color: $white;
     background-color: $green;
     text-align: center;
-    transition: .3s all ease;
+    transition: .3s background-color ease;
 
     &:hover {
         background-color: lighten($green, 10%);
@@ -134,7 +135,7 @@ div {
 .carousel-arrow {
     width: 16px;
     height: 30px;
-    transition: .3s all ease;
+    transition: .3s transform ease;
 
     img {
         object-fit: contain;
@@ -142,10 +143,12 @@ div {
 }
 
 .swiper-pagination-bullet {
+    display: block;
     width: 16px !important;
     height: 16px !important;
     background-color: $white-400 !important;
     z-index: 1000 !important;
+    border-radius: 100%;
     cursor: pointer;
 }
 
@@ -156,7 +159,7 @@ div {
 .block-anim {
     opacity: 0;
     transform: translateY(100%);
-    transition: .8s all ease;
+    transition: .8s opacity ease, .8s transform ease;
 
     &_active {
         opacity: 1;

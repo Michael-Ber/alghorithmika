@@ -175,6 +175,7 @@
 
     &__input {
         @include adaptiv-size('width', 270, 150);
+        font-family: "Montserrat", sans-serif;
         display: block;
         height: 70px;
         font-size: 18px;

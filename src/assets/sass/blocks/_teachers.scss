@@ -7,10 +7,12 @@
 
     &__carousel {
         position: relative;
+        margin-bottom: 30px;
     }
 
     &__title {
         text-align: left !important;
+        padding-bottom: 40px;
 
         @media(max-width: $breakpoint-767) {
             text-align: center !important;
@@ -20,7 +22,7 @@
     &__btn {
         width: 270px;
         height: 50px;
-        margin: 30px auto 0 auto;
+        margin: 0 auto;
         cursor: pointer;
 
         @media(max-width: $breakpoint-767) {
@@ -32,9 +34,6 @@
 
 .carousel-teachers {
 
-    &__wrapper {
-        margin-top: 40px;
-    }
 
     &__card {
         position: relative;
@@ -73,6 +72,7 @@
     &__arrow-wrapper {
         background-color: $white-200 !important;
         top: 0;
+        user-select: none;
 
         @media(max-width: $breakpoint-767) {
             display: none !important;
@@ -96,7 +96,11 @@
         display: none;
 
         @media(max-width: $breakpoint-767) {
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px
+
         }
     }
 }

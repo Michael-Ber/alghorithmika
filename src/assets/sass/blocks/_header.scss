@@ -37,7 +37,7 @@
     &__rectangle {
         width: 200px;
         height: 200px;
-        transition: .3s all ease;
+        transition: .3s box-shadow ease, .3s background-color ease;
         background-color: $main-color;
         transform: rotate(35deg);
         position: absolute;
@@ -66,49 +66,42 @@
             padding-right: 0;
         }
 
-        a {
-            cursor: pointer;
+        .logo-lg {
+            position: relative;
+            display: block;
+            z-index: 20;
 
-            svg {
-                &:nth-child(1) {
-                    position: relative;
-                    display: block;
-                    z-index: 20;
-
-                    @media(max-width: $breakpoint-991) {
-                        display: none;
-                    }
-                }
-
-                &:nth-child(2) {
-                    display: none;
-
-                    @media(max-width: $breakpoint-991) {
-                        display: block;
-                    }
-                }
+            @media(max-width: $breakpoint-991) {
+                display: none;
             }
+        }
 
-            &:hover {
-                .header__rectangle {
-                    background-color: lighten($main-color, 10%);
-                    box-shadow: 0 0 10px 0 $main-color
-                }
+        .logo-sm {
+            display: none;
 
-                svg {
+            @media(max-width: $breakpoint-991) {
+                display: block;
+            }
+        }
+
+
+        &:hover {
+            .header__rectangle {
+                background-color: lighten($main-color, 10%);
+                box-shadow: 0 0 10px 0 $main-color
+            }
+            .logo-sm {
+                path {
+                    transition: .3s ease fill;
+
+                    &:nth-child(1),
                     &:nth-child(2) {
-                        path {
-                            transition: .3s ease fill;
-
-                            &:nth-child(1),
-                            &:nth-child(2) {
-                                fill: lighten($main-color, 10%)
-                            }
-                        }
+                        fill: lighten($main-color, 10%)
                     }
-
                 }
             }
+
+        
         }
 
 
@@ -172,7 +165,7 @@
             width: 0%;
             height: 2px;
             background-color: $main-color;
-            transition: .3s all ease;
+            transition: .3s width ease;
         }
 
         &:hover {
@@ -190,18 +183,13 @@
         margin-top: 7px;
         gap: 10px;
 
-        span {
-
-            &:nth-child(1) {
-                &::before {
-                    content: url('./assets/icons/intro/cabinet.svg');
-                    width: 22px;
-                    display: block;
-                    height: 22px;
-                }
+        .btn-icon {
+            &::before {
+                content: url('./assets/icons/intro/cabinet.svg');
+                width: 22px;
+                display: block;
+                height: 22px;
             }
-
-
         }
 
         @media(max-width: $breakpoint-991) {
@@ -212,12 +200,10 @@
             width: 50px;
             height: 50px;
             border-radius: 100%;
-
-            span {
-                &:nth-child(2) {
-                    display: none;
-                }
+            .btn-text {
+                display: none;
             }
+            
         }
     }
 }
@@ -244,7 +230,7 @@
         border-radius: 100%;
         width: 100%;
         height: 100%;
-        transition: .3s all ease;
+        transition: .3s background-color ease;
         cursor: pointer;
 
         span {
@@ -261,7 +247,7 @@
         &_active {
             span {
                 position: relative;
-                transition: .4s all ease;
+                transition: .4s transform ease;
 
                 &:nth-child(1) {
                     transform: rotate(45deg);
@@ -283,21 +269,21 @@
     &__menu {
         opacity: 0;
         visibility: hidden;
-        width: 100%;
-        position: absolute;
+        width: calc(100% + 40px);
+        position: fixed;
         top: 83px;
         left: -100%;
+        bottom: 0;
         transform: translateX(-50%);
-        padding: 0 20px 20px 20px;
+        padding: 20px;
         background-color: $white-100;
-        transition: .3s all ease;
+        transition: .3s opacity ease, .3s left ease;
         z-index: 1000;
-
         &_active {
             left: 50%;
             opacity: 1;
+            overflow: scroll;
             visibility: visible;
-
         }
     }
 
@@ -379,7 +365,7 @@
         &_telegram {
             &:hover {
                 svg path {
-                    transition: .3s all fill;
+                    transition: .3s fill ease;
 
                     &:nth-child(1),
                     &:nth-child(2) {
@@ -397,7 +383,7 @@
 
             &:hover {
                 svg path {
-                    transition: .3s all ease;
+                    transition: .3s fill ease;
 
                     &:nth-child(1) {
                         fill: darken(#37D259, 20%)

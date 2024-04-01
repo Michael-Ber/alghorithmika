@@ -50,7 +50,11 @@
         display: grid;
         grid-template-columns: minmax(180px, 300px) minmax(150px, 250px) minmax(150px, 250px) minmax(180px, 300px);
         gap: 20px;
-        overflow: hidden; //для обрезания фотографий
+        // overflow: hidden; //для обрезания фотографий
+
+        @media(max-width: $breakpoint-767) {
+            grid-template-columns: repeat(3,  minmax(100px, auto));
+        }
     }
 
     &__item {
@@ -78,9 +82,11 @@
             grid-column-start: 4;
             grid-column-end: 5;
             @media(max-width: $breakpoint-767) {
-                grid-row-start: 1;
-                grid-row-end: 3;
+                grid-row-start: 5;
+                grid-row-end: 7;
                 height: 100%;
+                grid-column-start: 3;
+                grid-column-end: 4;
             }
         }
 
@@ -128,10 +134,16 @@
             grid-column-start: 4;
             grid-column-end: 5;
             @media(max-width: $breakpoint-767) {
-                grid-row-start: 3;
-                grid-row-end: 5;
+                // grid-row-start: 3;
+                // grid-row-end: 5;
                 margin-top: 0;
+                // height: 100%;
+                grid-row-start: 5;
+                grid-row-end: 7;
                 height: 100%;
+                grid-column-start: 1;
+                grid-column-end: 3;
+                
             }
         }
 
@@ -149,6 +161,7 @@
                 transform: translateX(-50%);
                 width: 335px;
                 height: 70px;
+
             }
         }
     }

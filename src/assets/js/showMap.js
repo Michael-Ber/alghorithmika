@@ -1,8 +1,7 @@
 export const showMap = () => {
     try {
-        const mapImg = document.querySelector('#map');
+        const mapImg = document.querySelector('#map-img');
         const body = document.querySelector('body');
-
         const map = document.createElement('div');
         map.classList.add('modal-map');
         const mapScript = document.createElement('div');

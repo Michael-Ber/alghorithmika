@@ -12,7 +12,7 @@
         margin-top: 100px;
     }
 
-    &__bg {
+    &__hero {
         @include adaptiv-size('width', 887, 30);
         display: flex;
         justify-content: center;
@@ -93,7 +93,7 @@
 
         &:hover {
             svg path {
-                transition: .3s all ease;
+                transition: .3s stroke ease;
 
                 &:nth-child(n) {
                     stroke: lighten($main-color, 10%)
@@ -138,35 +138,8 @@
 .help-intro {
 
     &__images {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
+        min-width: 230px;
 
-    &__img {
-        position: relative;
-        width: 65px;
-        height: 65px;
-
-        &:nth-child(1) {
-            z-index: 10;
-        }
-
-        &:nth-child(2) {
-            z-index: 9;
-        }
-
-        &:nth-child(3) {
-            z-index: 8;
-        }
-
-        &:nth-child(4) {
-            z-index: 7;
-        }
-
-        &:nth-child(n):not(:first-child) {
-            margin-left: -10px;
-        }
     }
 
     &__text {
