@@ -155,6 +155,7 @@
   width: 100%;
   height: 100%;
   transition: .3s background-color ease;
+  border: none;
   cursor: pointer; }
   .header-burger__btn span {
     display: block;
