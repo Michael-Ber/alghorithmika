@@ -45,6 +45,7 @@
 
     &__question {
         @include adaptiv-size('font-size', 24, 16);
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;

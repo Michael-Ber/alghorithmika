@@ -1672,6 +1672,7 @@
 
 .accordion-questions__question {
   font-size: calc((8 / (1920 - 375) * ((100vw - 375px)) + 16px));
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
