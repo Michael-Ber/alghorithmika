@@ -8,8 +8,15 @@ export const burgerInteraction = () => {
         burgerBtn.addEventListener('click', () => {
             menu.classList.toggle('header-burger__menu_active');
             burgerBtn.classList.toggle('header-burger__btn_active');
+            if(burgerBtn.classList.contains('header-burger__btn_active')) {
+                burgerBtn.setAttribute('aria-expanded', true);
+                menu.setAttribute('aria-hidden', false)
+            }else {
+                burgerBtn.setAttribute('aria-expanded', false)
+            }
             if(!menu.classList.contains('header-burger__menu_active')) {
                 body.style.overflow = 'auto';
+                menu.setAttribute('aria-hidden', true)
             }
         })
         window.addEventListener('resize', () => {

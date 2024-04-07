@@ -15,6 +15,12 @@ import webpConv from 'gulp-webp';
 import multiDest from 'gulp-multi-dest';
 import changed from 'gulp-changed';
 
+import rename from 'gulp-rename';
+import notify from 'gulp-notify';
+import sourcemaps from 'gulp-sourcemaps';
+import fileinclude from 'gulp-file-include';
+
+
 
 const sass = gulpSass(nodeSass);
 
@@ -27,6 +33,16 @@ gulp.task("copy-html", () => {
     .pipe(gulp.dest(dist))
     .pipe(browsersync.stream());
 });
+
+gulp.task("html-include", () => {
+  return src(['./src/*.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(dest(dist))
+    .pipe(browsersync.stream())
+})
 
 gulp.task("build-sass", () => {
   return gulp.src("./src/assets/sass/style.scss")
@@ -103,6 +119,7 @@ gulp.task("watch", () => {
   });
 
   gulp.watch("./src/*.html", gulp.parallel("copy-html"));
+  gulp.watch("./src/*.html", gulp.parallel("html-include"));
   gulp.watch("./src/assets/js/**/*.js", gulp.parallel("build-js"));
   gulp.watch("./src/assets/sass/**/*.scss", gulp.parallel("build-sass"));
   gulp.watch("./src/assets/img/**/*.*", gulp.parallel("imagemin"));
@@ -113,9 +130,12 @@ gulp.task("build", gulp.parallel("copy-html", "build-js", "build-sass"));
 
 gulp.task("prod", () => {
   gulp.src("./src/assets/sass/style.scss")
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sourcemaps.init())
+    .pipe(sass({outputStyle: 'expanded'}).on('error', notify.onError()))
+    .pipe(rename({suffix: '.min'}))
     .pipe(postcss([autoprefixer()]))
-    .pipe(cleanCSS())
+    .pipe(cleanCSS({level: 2}))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(dist))
 
   return gulp.src("./src/assets/js/main.js")
