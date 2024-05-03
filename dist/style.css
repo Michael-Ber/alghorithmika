@@ -1094,7 +1094,8 @@
   padding-bottom: 100px; }
   .comments__title {
     text-align: left !important;
-    margin-bottom: 50px; }
+    margin-bottom: 50px;
+    display: inline-block; }
     @media (max-width: 575px) {
       .comments__title {
         text-align: center !important; } }
