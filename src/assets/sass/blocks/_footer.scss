@@ -8,6 +8,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: flex-end;
+        margin-bottom: 30px;
         @media(max-width: $breakpoint-991) {
             justify-content: space-between;
             align-items: flex-start;
@@ -27,7 +28,6 @@
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
-        margin-top: 30px;
         padding-bottom: 34px;
         border-bottom: 1px solid $white-300;
         @media(max-width: $breakpoint-767) {
@@ -221,7 +221,6 @@
             order: 2;
             flex: 1 0 auto;
             text-align: center;
-            margin-top: 30px;
         }
         @media(max-width: $breakpoint-399) {
             text-align: left;
@@ -249,6 +248,7 @@
         @media(max-width: $breakpoint-767) {
             order: 1;
             width: 100%;
+            margin-bottom: 30px;
         }
     }
 

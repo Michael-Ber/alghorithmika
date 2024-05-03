@@ -2,6 +2,7 @@
     @include adaptiv-size('padding-top', 70, 50);
 
     &__grid {
+        @include adaptiv-size('margin-bottom', 120, 40);
         display: grid;
         grid-template-columns: repeat(4, 20%);
         justify-content: space-between;
@@ -18,17 +19,22 @@
     }
 
     &__title {
-        @include adaptiv-size('margin-top', 120, 40);
+        margin-bottom: 45px;
     }
 
     &__map {
         position: relative;
-        background: url('./assets/img/school/map.png') 0% 0% no-repeat;
-        margin-top: 45px;
+        background: url('./assets/img/school/map.png') no-repeat;
+        background-position: center center;
         min-height: 465px;
-
+        max-width: 1170px;
+        margin: 0 auto;
         @media(max-width: $breakpoint-767) {
-            @include adaptiv-size('margin-top', 150, 50);
+            padding-top: 460px;
+            background-position: top center;
+        }
+        @media(max-width: $breakpoint-575) {
+            padding-top: 400px
         }
     }
 
@@ -37,7 +43,7 @@
 .grid-school {
 
     &__item {
-        padding-top: 80px;
+        padding-top: 110px;
 
         &_1 {
             background: url('./assets/icons/school/profi.png') top left no-repeat;
@@ -60,7 +66,6 @@
     }
 
     &__content {
-        margin-top: 30px;
 
         @media(max-width: $breakpoint-575) {
             margin-top: 0;
@@ -72,11 +77,11 @@
     &__title {
         @include adaptiv-size('font-size', 20, 18);
         font-weight: 600;
+        margin-bottom: 14px;
     }
 
     &__descr {
         @include adaptiv-size('font-size', 18, 16);
-        margin-top: 14px;
     }
 }
 
@@ -90,6 +95,7 @@
         padding: 15px 30px 19px 19px;
         border-radius: 15px;
         background: $white-200;
+        height: clamp(80px, 20vw, 110px);
 
         &::after {
             content: '';
@@ -142,87 +148,87 @@
         @include adaptiv-size('font-size', 20, 14);
     }
 
+   
+
+    
+
+    &__graduates {
+        max-width: clamp(212px, 30vw, 292px);
+        display: flex;
+        position: absolute;
+        top: -25px;
+        right: 10%;
+
+        @media(max-width: 767px) {
+            right: 50%;
+            transform: translateX(50%);
+        }
+
+
+    }
+
     &__cities {
+        position: absolute;
+        top: 40px;
+        left: 30%;
+        gap: 16px;
+        width: clamp(162px, 40vw, 230px);
+        @media(max-width: $breakpoint-991) {
+            left: 20%;
+        }
+        @media(max-width: $breakpoint-767) {
+            top: unset;
+            left: unset;
+            right: calc(50% + 40px);
+            bottom: 330px;
+        }
 
         @media(max-width: $breakpoint-575) {
-            max-width: 162px;
+            bottom: 300px;
+            left: 15px;
         }
+        
     }
 
     &__countries {
-        transform: translate(calc(100% + 40px), 0);
-
+        position: absolute;
+        top: 215px;
+        left: calc(50% + 40px);
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        width: clamp(167px, 40vw, 223px);
         @media(max-width: $breakpoint-767) {
-            transform: unset;
+            top: unset;
+            bottom: 330px;
         }
-
         @media(max-width: $breakpoint-575) {
-            transform: unset;
-            max-width: 162px;
-        }
-    }
-
-    &__top {
-        @include adaptiv-size('margin-left', 700, 300);
-        @include adaptiv-size('max-width', 292, 212);
-        display: block;
-        transform: translateY(-20%);
-
-        @media(max-width: $breakpoint-767) {
-            margin-left: 0;
-            margin: 0 auto;
-        }
-
-
-    }
-
-    &__middle {
-        @include adaptiv-size('margin-left', 350, 100);
-        display: inline-flex;
-        flex-direction: column;
-        gap: 65px;
-        min-width: 230px;
-        margin-top: -80px;
-
-        @media(max-width: $breakpoint-767) {
-            display: flex;
-            justify-content: center;
-            margin-left: 0;
-            margin: 290px auto 0 auto;
-            flex-direction: row;
-        }
-
-        @media(max-width: $breakpoint-575) {
-            gap: 10px;
-            justify-content: center;
-        }
-
-        @media(max-width: $breakpoint-399) {
-            gap: 10px;
-            justify-content: space-between;
+            bottom: 300px;
+            left: unset;
+            right: 15px;
         }
     }
 
     &__bottom {
+        position: absolute;
+        bottom: -70px;
+        left: 50%;
+        transform: translateX(-50%);
         display: flex;
         justify-content: center;
-        align-items: stretch;
         gap: 40px;
-        margin-top: 65px;
-
+        width: 100%;
         @media(max-width: $breakpoint-767) {
             flex-direction: column;
-            top: 100%;
-            bottom: 0;
-            left: 0;
+            position: static;
             transform: unset;
-            width: 100%;
-            margin-top: 20px;
+            gap: 18px;
         }
     }
 
     &__bottom-block {
-        @include adaptiv-size('width', 460, 260);
+        // @include adaptiv-size('width', 460, 330);
+        width: clamp(330px, 40vw, 460px);
         display: flex;
         align-items: center;
         gap: 30px;

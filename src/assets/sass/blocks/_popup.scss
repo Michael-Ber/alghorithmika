@@ -113,24 +113,25 @@
 
     &__title {
         @include adaptiv-size('font-size', 56, 44);
+        margin-bottom: 20px;
         font-weight: 600;
     }
 
     &__subtitle {
         @include adaptiv-size('font-size', 24, 18);
-        @include adaptiv-size('margin-top', 20, 14);
+        @include adaptiv-size('margin-bottom', 46, 27);
         font-weight: 600;
     }
 
     &__descr {
         @include adaptiv-size('font-size', 18, 16);
-        @include adaptiv-size('margin-top', 46, 27);
+        margin-bottom: 30px;
         font-weight: 500;
     }
 
     &__list {
         @include adaptiv-size('font-size', 24, 18);
-        @include adaptiv-size('margin-top', 30, 26);
+        @include adaptiv-size('margin-bottom', 59, 43);
         font-weight: 600;
     }
 
@@ -160,13 +161,10 @@
         }
     }
 
-    &__form {
-        @include adaptiv-size('margin-top', 59, 43);
-    }
-
     &__inputs {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 30px;
         @media(max-width: $breakpoint-991) {
             flex-direction: column;
             gap: 20px;
@@ -195,7 +193,6 @@
     &__submit {
         @include adaptiv-size('height', 70, 60);
         width: 100%;
-        margin-top: 30px;
         border: none;
         cursor: pointer;
     }

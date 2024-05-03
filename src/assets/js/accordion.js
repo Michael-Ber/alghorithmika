@@ -9,7 +9,7 @@ export const accordion = () => {
                 item.classList.toggle('accordion-questions__item_active');
 
                 if(item.classList.contains('accordion-questions__item_active')) {
-                    content.style.maxHeight = content.scrollHeight + 'px';
+                    content.style.maxHeight = content.scrollHeight + 25 + 'px';
                     content.setAttribute('aria-hidden', false);
                     control.setAttribute('aria-expanded', true);
 

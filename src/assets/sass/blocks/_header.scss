@@ -28,7 +28,7 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-
+        padding-top: 7px;
         @media(max-width: $breakpoint-991) {
             align-items: center;
         }
@@ -109,7 +109,7 @@
 
     &__menu {
         flex: 1 0 auto;
-        padding: 20px 25px 0 25px;
+        padding: 13px 25px 0 25px;
 
         @media(max-width: $breakpoint-991) {
             display: none;
@@ -120,6 +120,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 25px;
     }
 
     &__city {
@@ -142,9 +143,7 @@
         gap: 15px;
     }
 
-    &__nav {
-        margin-top: 25px;
-    }
+
 
     &__list {
         @include adaptiv-size('font-size', 16, 14);
@@ -180,7 +179,6 @@
         @include adaptiv-size('font-size', 16, 14);
         width: 235px;
         height: 50px;
-        margin-top: 7px;
         gap: 10px;
 
         .btn-icon {
@@ -190,10 +188,6 @@
                 display: block;
                 height: 22px;
             }
-        }
-
-        @media(max-width: $breakpoint-991) {
-            margin-top: 0;
         }
 
         @media(max-width: $breakpoint-767) {
@@ -300,18 +294,20 @@
 
     &__contacts {
         padding: 22px 19px 25px 19px;
-        margin-top: 23px;
         background-color: $white;
         border-radius: 15px;
         font-size: 16px;
     }
-
+    &__nav {
+        margin-bottom: 28px;
+    }
 
     &__cabinet {
         @extend .header__cabinet;
         width: 235px;
         height: 50px;
-        margin: 28px auto 0 auto;
+        margin: 0 auto;
+        margin-bottom: 23px;
 
         @media(max-width: $breakpoint-767) {
             border-radius: 60px;
@@ -327,13 +323,13 @@
     &__city {
         @extend .header__city;
         justify-content: center;
+        margin-bottom: 8px;
 
     }
 
     &__socials {
         @extend .header__socials;
         justify-content: center;
-        margin-top: 13px;
     }
 
     &__address {
@@ -345,15 +341,15 @@
         font-style: normal;
         font-weight: 500;
         text-align: center;
-        margin-top: 8px;
+        margin-bottom: 20px;
     }
 
     &__tel {
         display: block;
         font-size: 24px;
         font-weight: 600;
-        margin-top: 20px;
         text-align: center;
+        margin-bottom: 13px;
     }
 
 

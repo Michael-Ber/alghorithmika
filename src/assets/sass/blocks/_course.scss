@@ -1,11 +1,15 @@
 .course {
     @include adaptiv-size('padding-top', 120, 75);
 
+    &__title {
+        margin-bottom: 30px;
+    }
+
     &__subtitle {
         @include adaptiv-size('font-size', 20, 14);
         font-weight: 500;
-        margin-top: 30px;
         text-align: center;
+        margin-bottom: 40px;
     }
 
     &__grid {
@@ -13,7 +17,6 @@
         grid-template-columns: repeat(auto-fill, 375px);
         justify-content: center;
         gap: 17px;
-        margin-top: 40px;
     }
 
     &__card {

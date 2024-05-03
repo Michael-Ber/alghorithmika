@@ -11,7 +11,6 @@
         justify-content: flex-start;
         align-items: center;
         gap: 40px;
-        margin-top: 30px;
 
         @media(max-width: $breakpoint-991) {
             flex-direction: column;
@@ -22,6 +21,7 @@
 
     &__title {
         text-align: left !important;
+        margin-bottom: 30px;
     }
 
     &__script {
@@ -102,6 +102,7 @@
         color: $main-color;
         line-height: 90%;
         white-space: nowrap;
+        margin-bottom: 15px;
 
         &::before {
             content: url('./assets/icons/logo-mini.svg');
@@ -114,7 +115,6 @@
     &__bottom {
         font-size: 20px;
         font-weight: 500;
-        margin-top: 15px;
     }
 }
 

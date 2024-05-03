@@ -1,12 +1,11 @@
 .comments {
     @include adaptiv-size('padding-top', 100, 56);
-    @include adaptiv-size('margin-top', 80, 42);
     background-color: $white-200;
     padding-bottom: 100px;
 
     &__title {
         text-align: left !important;
-
+        margin-bottom: 50px;
         @media(max-width: $breakpoint-575) {
             text-align: center !important;
         }
@@ -14,9 +13,8 @@
 
     &__subtitle {
         @include adaptiv-size('font-size', 46, 24);
-        margin-top: 60px;
         text-align: center;
-
+        margin-bottom: 25px;
         @media(max-width: $breakpoint-575) {
             br {
                 display: none;
@@ -29,7 +27,7 @@
         justify-content: center;
         align-items: flex-start;
         gap: 240px;
-        margin-top: 25px;
+        margin-bottom: 35px;
 
         @media(max-width: $breakpoint-767) {
             gap: 120px;
@@ -37,6 +35,7 @@
 
         @media(max-width: $breakpoint-575) {
             gap: 50px;
+            margin-bottom: 41px;
         }
     }
 
@@ -44,16 +43,12 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(300px, 560px));
         justify-content: space-between;
-        margin-top: 35px;
         row-gap: 30px;
         column-gap: 40px;
+        margin-bottom: 50px;
 
         @media(max-width: $breakpoint-767) {
             grid-template-columns: 1fr;
-        }
-
-        @media(max-width: $breakpoint-575) {
-            margin-top: 41px;
         }
     }
 
@@ -71,18 +66,19 @@
     }
 
     &__btn {
-        @include adaptiv-size('margin-top', 50, 40);
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto;
         width: 160px;
         height: 50px;
+    }
+
+    &__carousel {
+        margin-bottom: 60px;
     }
 }
 
 .carousel-comments {
 
     &__wrapper {
-        margin-top: 50px;
         align-items: flex-start;
     }
 
@@ -273,7 +269,8 @@
     &__name-wrapper {
         display: flex;
         justify-content: space-between;
-        align-items: center
+        align-items: center;
+        margin-bottom: 10px;
     }
 
     &__name {
@@ -283,12 +280,8 @@
 
     &__value {
         display: flex;
-        margin-top: 10px;
         gap: 20px;
-
-        @media(max-width: $breakpoint-575) {
-            margin-top: 13px;
-        }
+        margin-bottom: 10px;
     }
 
 
@@ -327,7 +320,6 @@
         @include adaptiv-size('font-size', 16, 14);
 
         font-weight: 500;
-        margin-top: 10px;
     }
 
     &__read {
