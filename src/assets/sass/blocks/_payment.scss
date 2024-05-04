@@ -156,9 +156,10 @@
     }
 
     &__btn {
-        @include adaptiv-size('width', 200, 117);
-        @include adaptiv-size('height', 50, 35);
-
+        padding: 13px 20px;
+        @media(max-width: 767px) {
+            padding: 13px 40px;
+        }
         
     }
 }

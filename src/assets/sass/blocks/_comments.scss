@@ -67,9 +67,9 @@
     }
 
     &__btn {
+        max-width: 160px;
+        padding: 14px 20px;
         margin: 0 auto;
-        width: 160px;
-        height: 50px;
     }
 
     &__carousel {
@@ -319,12 +319,12 @@
 
     &__text {
         @include adaptiv-size('font-size', 16, 14);
-
         font-weight: 500;
     }
 
     &__read {
         @include adaptiv-size('font-size', 16, 14);
+        display: inline;
         color: $main-color;
     }
 }
